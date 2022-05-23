@@ -34,11 +34,11 @@ namespace ShelbyChester.DataAccess.InMemory
 
         public void Update(ClientPreAdvice clientPreAdvice)
         {
-            ClientPreAdvice clientToUpdate = clientPreAdvices.Find(c => c.Id == clientPreAdvice.Id);
+            ClientPreAdvice clientAdviceToUpdate = clientPreAdvices.Find(c => c.Id == clientPreAdvice.Id);
 
-            if (clientToUpdate != null)
+            if (clientAdviceToUpdate != null)
             {
-                clientToUpdate = clientPreAdvice;
+                clientAdviceToUpdate = clientPreAdvice;
             }
             else
             {
@@ -48,7 +48,7 @@ namespace ShelbyChester.DataAccess.InMemory
 
         public ClientPreAdvice Find(string Id)
         {
-            ClientPreAdvice clientPreAdvice = clientPreAdvices.Find(p => p.Id == Id);
+            ClientPreAdvice clientPreAdvice = clientPreAdvices.Find(c => c.Id == Id);
 
             if (clientPreAdvice != null)
             {
@@ -67,11 +67,11 @@ namespace ShelbyChester.DataAccess.InMemory
 
         public void Delete(string Id)
         {
-            ClientPreAdvice productToDelete = clientPreAdvices.Find(p => p.Id == Id);
+            ClientPreAdvice clientAdviceToDelete = clientPreAdvices.Find(c => c.Id == Id);
 
-            if (productToDelete != null)
+            if (clientAdviceToDelete != null)
             {
-                clientPreAdvices.Remove(productToDelete);
+                clientPreAdvices.Remove(clientAdviceToDelete);
             }
             else
             {
