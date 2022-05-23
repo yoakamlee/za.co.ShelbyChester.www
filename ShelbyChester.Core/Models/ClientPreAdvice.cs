@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ShelbyChester.Core.Models
 {
-    internal class ClientPreAdvice
+    public class ClientPreAdvice
     {
 
 
@@ -56,6 +56,12 @@ namespace ShelbyChester.Core.Models
         [Required(ErrorMessage = "Please Select Container Type!")]
         [Display(Name = "Container Type")]
         public ContainerType ContainerType { get; set; }
+
+
+        public ClientPreAdvice()
+        {
+            this.Id = Guid.NewGuid().ToString();
+        }
     }
 
     public enum Country
@@ -318,5 +324,7 @@ namespace ShelbyChester.Core.Models
         Refrigerated,
         Unsure
     }
+
+    
 }
 
