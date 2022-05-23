@@ -8,7 +8,7 @@ using ShelbyChester.Core.Models;
 
 namespace ShelbyChester.DataAccess.InMemory
 {
-    internal class ClientPreAdviceRepo
+    public class ClientPreAdviceRepo
     {
         ObjectCache cache = MemoryCache.Default;
         List<ClientPreAdvice> clientPreAdvices;

@@ -50,6 +50,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -169,6 +170,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClientPreAdviceManagerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -236,6 +238,10 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\ClientPreAdviceManager\Edit.cshtml" />
+    <Content Include="Views\ClientPreAdviceManager\Create.cshtml" />
+    <Content Include="Views\ClientPreAdviceManager\Delete.cshtml" />
+    <Content Include="Views\ClientPreAdviceManager\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -252,6 +258,24 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShelbyChester.Core\ShelbyChester.Core.csproj">
+      <Project>{c7fa63ff-9762-48e7-88ae-2d6076036475}</Project>
+      <Name>ShelbyChester.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShelbyChester.DataAccess.InMemory\ShelbyChester.DataAccess.InMemory.csproj">
+      <Project>{65617c35-6855-4333-814e-2479327a3404}</Project>
+      <Name>ShelbyChester.DataAccess.InMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShelbyChester.DataAccess.SQL\ShelbyChester.DataAccess.SQL.csproj">
+      <Project>{65f4863e-9b4c-49cc-b1fd-56e8dd28dbaa}</Project>
+      <Name>ShelbyChester.DataAccess.SQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShelbyChester.Services\ShelbyChester.Services.csproj">
+      <Project>{d4b2016f-8783-4f44-9394-ac33dd8e32b4}</Project>
+      <Name>ShelbyChester.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
