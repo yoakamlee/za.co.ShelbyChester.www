@@ -55,7 +55,7 @@ namespace ShelbyChester.Core.Models
 
         [Required(ErrorMessage = "Please Select Container Type!")]
         [Display(Name = "Container Type")]
-        public ContainerType ContainerType { get; set; }
+        public string ContainerType { get; set; }
 
 
         public ClientPreAdvice()
@@ -317,14 +317,5 @@ namespace ShelbyChester.Core.Models
         [Display(Name = "Zimbabwe")] ZW = 249,
     }
 
-    public enum ContainerType
-    {
-        Standard,
-        [Display(Name = "ISO Tank")] ISO_Tank,
-        Refrigerated,
-        Unsure
-    }
-
-    
 }
 

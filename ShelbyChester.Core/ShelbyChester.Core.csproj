@@ -43,10 +43,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\ClientPreAdvice.cs" />
+    <Compile Include="Models\ContainerCategory.cs" />
     <Compile Include="Models\FreightQuotation.cs" />
     <Compile Include="Models\WarehouseStorage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\ContainerCategory.cs" />
+    <Compile Include="ViewModels\ContainerCategoryViewModel.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

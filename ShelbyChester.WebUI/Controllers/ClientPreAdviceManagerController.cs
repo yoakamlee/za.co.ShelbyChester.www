@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ShelbyChester.Core.Models;
+using ShelbyChester.Core.ViewModels;
 using ShelbyChester.DataAccess.InMemory;
 
 namespace ShelbyChester.WebUI.Controllers
@@ -11,10 +12,12 @@ namespace ShelbyChester.WebUI.Controllers
     public class ClientPreAdviceManagerController : Controller
     {
          ClientPreAdviceRepo context;
+        ContainerCategoryRepo containerRepo;
 
         public ClientPreAdviceManagerController()
         {
             context = new ClientPreAdviceRepo();
+            containerRepo = new ContainerCategoryRepo();
         }
         // GET: ClientPreAdviceManager
         public ActionResult Index()
@@ -25,8 +28,11 @@ namespace ShelbyChester.WebUI.Controllers
 
         public ActionResult Create()
         {
-            ClientPreAdvice clientPreAdvice = new ClientPreAdvice();
-            return View(clientPreAdvice);
+            ContainerCategoryViewModel viewModel = new ContainerCategoryViewModel();
+
+            viewModel.ClientPreAdvice = new ClientPreAdvice();
+            viewModel.ContainerCategories = containerRepo.Collection();
+            return View(viewModel);
         }
         [HttpPost]
         public ActionResult Create(ClientPreAdvice clientPreAdvice)
@@ -54,7 +60,10 @@ namespace ShelbyChester.WebUI.Controllers
             }
             else
             {
-                return View(clientPreAdvice);
+                ContainerCategoryViewModel viewModel = new ContainerCategoryViewModel();
+                viewModel.ClientPreAdvice = clientPreAdvice;
+                viewModel.ContainerCategories = containerRepo.Collection();
+                return View(viewModel);
             }
         }
         [HttpPost]
