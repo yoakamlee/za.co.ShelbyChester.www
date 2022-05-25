@@ -9,7 +9,7 @@ namespace ShelbyChester.Core.Models
 {
     public class WarehouseStorage
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         [DisplayName("Warehouse Name")]
         public string Name { get; set; }
@@ -17,6 +17,11 @@ namespace ShelbyChester.Core.Models
         [DisplayName("Wrehouse Location")]
         public string Location { get; set; }
 
+        public WarehouseStorage()
+        {
+            this.Id = Guid.NewGuid().ToString();
+        }
+
     }
 }
-}
+

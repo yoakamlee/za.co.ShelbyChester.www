@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="ClientPreAdviceRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WarehouseStorageRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShelbyChester.Core\ShelbyChester.Core.csproj">

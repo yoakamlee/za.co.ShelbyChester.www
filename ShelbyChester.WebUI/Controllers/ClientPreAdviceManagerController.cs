@@ -31,7 +31,7 @@ namespace ShelbyChester.WebUI.Controllers
         [HttpPost]
         public ActionResult Create(ClientPreAdvice clientPreAdvice)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return View(clientPreAdvice);
             }
@@ -68,7 +68,7 @@ namespace ShelbyChester.WebUI.Controllers
             }
             else
             {
-                if (ModelState.IsValid)
+                if (!ModelState.IsValid)
                 {
                     return View(clientPreAdvice);
                 }

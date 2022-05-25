@@ -173,6 +173,7 @@
     <Compile Include="Controllers\ClientPreAdviceManagerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\WareHouseManagerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -242,6 +243,10 @@
     <Content Include="Views\ClientPreAdviceManager\Create.cshtml" />
     <Content Include="Views\ClientPreAdviceManager\Delete.cshtml" />
     <Content Include="Views\ClientPreAdviceManager\Index.cshtml" />
+    <Content Include="Views\WareHouseManager\Index.cshtml" />
+    <Content Include="Views\WareHouseManager\Create.cshtml" />
+    <Content Include="Views\WareHouseManager\Edit.cshtml" />
+    <Content Include="Views\WareHouseManager\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
