@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\ClientPreAdvice.cs" />
+    <Compile Include="Models\FreightQuotation.cs" />
     <Compile Include="Models\WarehouseStorage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

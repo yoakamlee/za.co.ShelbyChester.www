@@ -17,7 +17,7 @@ namespace ShelbyChester.WebUI.Controllers
         {
             context = new WarehouseStorageRepo();
         }
-        // GET: ClientPreAdviceManager
+        // GET: WarehouseManager
         public ActionResult Index()
         {
             List<WarehouseStorage> warehouseStorages = context.Collection().ToList();

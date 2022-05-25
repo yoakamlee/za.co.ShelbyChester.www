@@ -171,6 +171,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ClientPreAdviceManagerController.cs" />
+    <Compile Include="Controllers\FreightQuotationManagerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\WareHouseManagerController.cs" />
@@ -247,6 +248,10 @@
     <Content Include="Views\WareHouseManager\Create.cshtml" />
     <Content Include="Views\WareHouseManager\Edit.cshtml" />
     <Content Include="Views\WareHouseManager\Delete.cshtml" />
+    <Content Include="Views\FreightQuotationManager\Index.cshtml" />
+    <Content Include="Views\FreightQuotationManager\Create.cshtml" />
+    <Content Include="Views\FreightQuotationManager\Edit.cshtml" />
+    <Content Include="Views\FreightQuotationManager\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
