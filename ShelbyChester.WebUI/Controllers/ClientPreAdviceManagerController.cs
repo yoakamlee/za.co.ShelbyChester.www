@@ -16,7 +16,7 @@ namespace ShelbyChester.WebUI.Controllers
         {
             context = new ClientPreAdviceRepo();
         }
-        // GET: ProductManager
+        // GET: ClientPreAdviceManager
         public ActionResult Index()
         {
             List<ClientPreAdvice> clientPreAdvices = context.Collection().ToList();
