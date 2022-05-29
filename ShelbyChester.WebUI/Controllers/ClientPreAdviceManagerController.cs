@@ -93,6 +93,7 @@ namespace ShelbyChester.WebUI.Controllers
                 clientAdviceToEdit.Customer_Surname = clientPreAdvice.Customer_Surname;
                 clientAdviceToEdit.Country = clientPreAdvice.Country;
                 clientAdviceToEdit.ContainerType = clientAdviceToEdit.ContainerType;
+                clientAdviceToEdit.Province = clientPreAdvice.Province;
 
                 context.Commit();
 
@@ -128,6 +129,20 @@ namespace ShelbyChester.WebUI.Controllers
                 context.Delete(Id);
                 context.Commit();
                 return RedirectToAction("Index");
+            }
+        }
+
+        public ActionResult Details(string Id)
+        {
+            ClientPreAdvice clientPreAdvice = context.Find(Id);
+
+            if (clientPreAdvice == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                return View(clientPreAdvice);
             }
         }
 

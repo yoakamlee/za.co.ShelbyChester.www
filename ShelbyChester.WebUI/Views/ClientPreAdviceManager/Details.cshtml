@@ -1,0 +1,98 @@
+﻿@model ShelbyChester.Core.Models.ClientPreAdvice
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ClientPreAdvice</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_Surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_CellNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_CellNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfItems)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfItems)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeightOfItems)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeightOfItems)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SizePerItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SizePerItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Client_Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client_Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContainerType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContainerType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

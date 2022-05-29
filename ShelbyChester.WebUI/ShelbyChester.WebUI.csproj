@@ -257,6 +257,7 @@
     <Content Include="Views\ContainerCategoryManager\Create.cshtml" />
     <Content Include="Views\ContainerCategoryManager\Edit.cshtml" />
     <Content Include="Views\ContainerCategoryManager\Delete.cshtml" />
+    <Content Include="Views\ClientPreAdviceManager\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

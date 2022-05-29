@@ -57,6 +57,9 @@ namespace ShelbyChester.Core.Models
         [Display(Name = "Container Type")]
         public string ContainerType { get; set; }
 
+        [Display(Name = "Select Province")]
+        public Province Province { get; set; }
+
 
         public ClientPreAdvice()
         {
@@ -317,5 +320,16 @@ namespace ShelbyChester.Core.Models
         [Display(Name = "Zimbabwe")] ZW = 249,
     }
 
+    public enum Province
+    {
+        [Display(Name = "Eastern Cape")] Eastern_Cape,
+        [Display(Name = "Free State")] Free_State,
+        [Display(Name = "Gauteng")] Gauteng,
+        [Display(Name = "Kwa-Zulu Natal")] KwaZulu_Natal,
+        Limpopo,
+        Mpumalanga,
+        [Display(Name = "Northern Cape")] Northern_Cape,
+        [Display(Name = "North West")] North_West,
+    }
 }
 
