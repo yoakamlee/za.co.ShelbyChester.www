@@ -11,13 +11,13 @@ namespace ShelbyChester.WebUI.Controllers
 {
     public class ClientPreAdviceManagerController : Controller
     {
-         ClientPreAdviceRepo context;
-        ContainerCategoryRepo containerRepo;
+        InMemoryRepo<ClientPreAdvice> context;
+        InMemoryRepo<ContainerCategory> containerRepo;
 
         public ClientPreAdviceManagerController()
         {
-            context = new ClientPreAdviceRepo();
-            containerRepo = new ContainerCategoryRepo();
+            context = new InMemoryRepo<ClientPreAdvice>();
+            containerRepo = new InMemoryRepo<ContainerCategory>();
         }
         // GET: ClientPreAdviceManager
         public ActionResult Index()

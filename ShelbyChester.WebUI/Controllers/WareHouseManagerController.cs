@@ -11,11 +11,11 @@ namespace ShelbyChester.WebUI.Controllers
     public class WareHouseManagerController : Controller
     {
 
-        WarehouseStorageRepo context;
+        InMemoryRepo<WarehouseStorage> context;
 
         public WareHouseManagerController()
         {
-            context = new WarehouseStorageRepo();
+            context = new InMemoryRepo<WarehouseStorage>();
         }
         // GET: WarehouseManager
         public ActionResult Index()

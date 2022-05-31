@@ -12,11 +12,11 @@ namespace ShelbyChester.WebUI.Controllers
     {
 
 
-        ContainerCategoryRepo context;
+        InMemoryRepo<ContainerCategory> context;
 
         public ContainerCategoryManagerController()
         {
-            context = new ContainerCategoryRepo();
+            context = new InMemoryRepo<ContainerCategory>();
         }
         // GET: ContainerCategoryManager
         public ActionResult Index()

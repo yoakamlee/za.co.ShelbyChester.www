@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace ShelbyChester.Core.Models
 {
-    public class FreightQuotation
+    public class FreightQuotation : BaseEntity
     {
-        public string Id { get; set; }
 
         [Required(ErrorMessage = "enter the type of the container")]
         [DisplayName("Container Type")]
@@ -50,9 +49,5 @@ namespace ShelbyChester.Core.Models
             return (total);
         }
 
-        public FreightQuotation()
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
     }
 }

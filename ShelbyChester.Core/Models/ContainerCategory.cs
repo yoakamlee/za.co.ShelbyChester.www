@@ -6,16 +6,11 @@ using System.Threading.Tasks;
 
 namespace ShelbyChester.Core.Models
 {
-    public class ContainerCategory
+    public class ContainerCategory : BaseEntity
     {
-        public string Id { get; set; }
         public string ContainerName { get; set; }
         public int ContainerWeight { get; set; }
         public int ContainerSize { get; set; }
 
-        public ContainerCategory()
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
     }
 }

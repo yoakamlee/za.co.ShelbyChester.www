@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace ShelbyChester.Core.Models
 {
-    public class ClientPreAdvice
+    public class ClientPreAdvice : BaseEntity
     {
-
-
-        public string Id { get; set; }
 
         [Required(ErrorMessage = "Please enter information!")]
         [Display(Name = "Name")]
@@ -60,11 +57,6 @@ namespace ShelbyChester.Core.Models
         [Display(Name = "Select Province")]
         public Province Province { get; set; }
 
-
-        public ClientPreAdvice()
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
     }
 
     public enum Country

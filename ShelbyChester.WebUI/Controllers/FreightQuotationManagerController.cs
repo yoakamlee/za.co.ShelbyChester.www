@@ -11,11 +11,11 @@ namespace ShelbyChester.WebUI.Controllers
     public class FreightQuotationManagerController : Controller
     {
 
-        FreightQuotationRepo context;
+        InMemoryRepo<FreightQuotation> context;
 
         public FreightQuotationManagerController()
         {
-            context = new FreightQuotationRepo();
+            context = new InMemoryRepo<FreightQuotation>();
         }
         // GET: FreightQuotationManager
         public ActionResult Index()
