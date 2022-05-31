@@ -1,17 +1,121 @@
 ﻿@{
     ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_LayoutPageWithTheme.cshtml";
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<div class="inner-banner">
+</div>
+<section class="w3l-breadcrumb">
+    <div class="container">
+        <ul class="breadcrumbs-custom-path">
+            <li><a href="#url">Home</a></li>
+            <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Contact</li>
+        </ul>
+    </div>
+</section>
+<!--/contact-->
+<section class="w3l-contact-11 pt-5">
+    <div class="contacts-main pt-lg-5 pt-3">
+        <div class="title-content text-center">
+            <h6 class="sub-titlehny">Contact</h6>
+            <h3 class="hny-title mb-0">We’re Here to Help You</h3>
+            <p class="mb-md-5 mb-4">Have some suggestions or just want to say hi? Contact us:</p>
+        </div>
+        <div class="form-41-mian section-gap mt-5">
+            <div class="container">
+                <div class="d-grid align-form-map">
+                    <div class="form-inner-cont">
+                        <form action="https://sendmail.w3layouts.com/submitForm" method="post" class="contact-form">
+                            <div class="form-top-left">
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+                                <input type="text" name="w3lName" id="w3lName" placeholder="Name" required="">
+
+                                <input type="email" name="w3lSender" id="w3lSender" placeholder="Email*"
+                                       required="">
+
+                                <input type="text" name="w3lSubject" id="w3lName" placeholder="Subject"
+                                       required="">
+
+                            </div>
+                            <div class="form-top-righ">
+                                <textarea name="w3lMessage" id="w3lMessage" placeholder="Message*"
+                                          required=""></textarea>
+                            </div>
+                            <div class="form-submit text-right">
+                                <button type="submit" class="btn btn-style btn-primary">Submit Message</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="contant11-top-bg mt-4">
+            <div class="container pb-lg-5">
+                <div class="d-grid contact py-lg-5 py-4">
+                    <div class="contact-info-left d-grid text-left">
+                        <div class="contact-info">
+                            <span class="fa fa-map-o" aria-hidden="true"></span>
+                            <h4>Visit Us Daily:</h4>
+                            <p class="mb-2">
+                                New York
+                                United States, LY-90814 Hill Station 2nd Street.
+                            </p>
+
+                        </div>
+                        <div class="contact-info">
+                            <span class="fa fa-phone" aria-hidden="true"></span>
+                            <h4>Phone Us 24/7:</h4>
+                            <p class="mb-2 conp"> <a href="tel:+1-2345-678-11">+1-2345-678-11</a></p>
+                            <p class="conp"> <a href="tel:+1-2345-678-11">+1-2345-678-11</a></p>
+                        </div>
+                        <div class="contact-info">
+                            <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                            <h4>Mail Us 24/7:</h4>
+                            <p class="mb-2 conp"><a href="mailto:incorpo@email.com" class="email">incorpo@email.com</a></p>
+                            <p class="conp"><a href="mailto:incorpo@email.com" class="email">incorpo@email.com</a></p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001161.424489281!2d-78.01909140705047!3d42.72866436845163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sin!4v1570786994395!5m2!1sen!2sin"
+                    frameborder="0" allowfullscreen=""></iframe>
+        </div>
+</section>
+<!--//contact-->
+<!-- Template JavaScript -->
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+
+<script src="assets/js/theme-change.js"></script>
+<!--/MENU-JS-->
+<script>
+    $(window).on("scroll", function () {
+      var scroll = $(window).scrollTop();
+
+      if (scroll >= 80) {
+        $("#site-header").addClass("nav-fixed");
+      } else {
+        $("#site-header").removeClass("nav-fixed");
+      }
+    });
+
+    //Main navigation Active Class Add Remove
+    $(".navbar-toggler").on("click", function () {
+      $("header").toggleClass("active");
+    });
+    $(document).on("ready", function () {
+      if ($(window).width() > 991) {
+        $("header").removeClass("active");
+      }
+      $(window).on("resize", function () {
+        if ($(window).width() > 991) {
+          $("header").removeClass("active");
+        }
+      });
+    });
+</script>
