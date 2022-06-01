@@ -1,4 +1,5 @@
-﻿using ShelbyChester.Core.Models;
+﻿using ShelbyChester.Core.Contracts;
+using ShelbyChester.Core.Models;
 using ShelbyChester.DataAccess.InMemory;
 using System;
 using System.Collections.Generic;
@@ -12,11 +13,11 @@ namespace ShelbyChester.WebUI.Controllers
     {
 
 
-        InMemoryRepo<ContainerCategory> context;
+        IRepo<ContainerCategory> context;
 
-        public ContainerCategoryManagerController()
+        public ContainerCategoryManagerController(IRepo<ContainerCategory> containerCategoryContext)
         {
-            context = new InMemoryRepo<ContainerCategory>();
+            context = containerCategoryContext;
         }
         // GET: ContainerCategoryManager
         public ActionResult Index()

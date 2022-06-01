@@ -1,4 +1,5 @@
-﻿using ShelbyChester.Core.Models;
+﻿using ShelbyChester.Core.Contracts;
+using ShelbyChester.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ShelbyChester.DataAccess.InMemory
 {
-    public class InMemoryRepo<T> where T : BaseEntity
+    public class InMemoryRepo<T> : IRepo<T> where T : BaseEntity
     {
         ObjectCache cache = MemoryCache.Default;
         List<T> items;
@@ -69,7 +70,7 @@ namespace ShelbyChester.DataAccess.InMemory
         public void Delete(string Id)
         {
             T tToDelete = items.Find(i => i.Id == Id);
-            if (tToDelete !=null)
+            if (tToDelete != null)
             {
                 items.Remove(tToDelete);
             }

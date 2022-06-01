@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ShelbyChester.Core.Contracts;
 using ShelbyChester.Core.Models;
 using ShelbyChester.Core.ViewModels;
 using ShelbyChester.DataAccess.InMemory;
@@ -11,13 +12,14 @@ namespace ShelbyChester.WebUI.Controllers
 {
     public class ClientPreAdviceManagerController : Controller
     {
-        InMemoryRepo<ClientPreAdvice> context;
-        InMemoryRepo<ContainerCategory> containerRepo;
+        IRepo<ClientPreAdvice> context;
+        IRepo<ContainerCategory> containerRepo;
 
-        public ClientPreAdviceManagerController()
+        public ClientPreAdviceManagerController(IRepo<ClientPreAdvice> clientPreAdviceContext,
+                                                IRepo<ContainerCategory> containerCategoryContext)
         {
-            context = new InMemoryRepo<ClientPreAdvice>();
-            containerRepo = new InMemoryRepo<ContainerCategory>();
+            context = clientPreAdviceContext;
+            containerRepo = containerCategoryContext;
         }
         // GET: ClientPreAdviceManager
         public ActionResult Index()

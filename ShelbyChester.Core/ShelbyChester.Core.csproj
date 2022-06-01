@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IRepo.cs" />
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\ClientPreAdvice.cs" />
     <Compile Include="Models\ContainerCategory.cs" />

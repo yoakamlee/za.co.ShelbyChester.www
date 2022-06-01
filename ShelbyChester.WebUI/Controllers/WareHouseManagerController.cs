@@ -1,4 +1,5 @@
-﻿using ShelbyChester.Core.Models;
+﻿using ShelbyChester.Core.Contracts;
+using ShelbyChester.Core.Models;
 using ShelbyChester.DataAccess.InMemory;
 using System;
 using System.Collections.Generic;
@@ -11,11 +12,11 @@ namespace ShelbyChester.WebUI.Controllers
     public class WareHouseManagerController : Controller
     {
 
-        InMemoryRepo<WarehouseStorage> context;
+        IRepo<WarehouseStorage> context;
 
-        public WareHouseManagerController()
+        public WareHouseManagerController(IRepo<WarehouseStorage> warehouseStorageContext)
         {
-            context = new InMemoryRepo<WarehouseStorage>();
+            context = warehouseStorageContext;
         }
         // GET: WarehouseManager
         public ActionResult Index()

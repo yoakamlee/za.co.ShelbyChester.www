@@ -1,4 +1,5 @@
-﻿using ShelbyChester.Core.Models;
+﻿using ShelbyChester.Core.Contracts;
+using ShelbyChester.Core.Models;
 using ShelbyChester.DataAccess.InMemory;
 using System;
 using System.Collections.Generic;
@@ -11,11 +12,11 @@ namespace ShelbyChester.WebUI.Controllers
     public class FreightQuotationManagerController : Controller
     {
 
-        InMemoryRepo<FreightQuotation> context;
+        IRepo<FreightQuotation> context;
 
-        public FreightQuotationManagerController()
+        public FreightQuotationManagerController(IRepo<FreightQuotation> freightQuotationContext)
         {
-            context = new InMemoryRepo<FreightQuotation>();
+            context = freightQuotationContext;
         }
         // GET: FreightQuotationManager
         public ActionResult Index()
