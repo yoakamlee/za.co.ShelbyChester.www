@@ -1,6 +1,7 @@
 using ShelbyChester.Core.Contracts;
 using ShelbyChester.Core.Models;
 using ShelbyChester.DataAccess.InMemory;
+using ShelbyChester.DataAccess.SQL;
 using System;
 
 using Unity;
@@ -45,10 +46,10 @@ namespace ShelbyChester.WebUI
 
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
-            container.RegisterType<IRepo<ClientPreAdvice>, InMemoryRepo<ClientPreAdvice>>();
-            container.RegisterType<IRepo<ContainerCategory>, InMemoryRepo<ContainerCategory>>();
-            container.RegisterType<IRepo<FreightQuotation>, InMemoryRepo<FreightQuotation>>();
-            container.RegisterType<IRepo<WarehouseStorage>, InMemoryRepo<WarehouseStorage>>();
+            container.RegisterType<IRepo<ClientPreAdvice>, SQLRepo<ClientPreAdvice>>();
+            container.RegisterType<IRepo<ContainerCategory>, SQLRepo<ContainerCategory>>();
+            container.RegisterType<IRepo<FreightQuotation>, SQLRepo<FreightQuotation>>();
+            container.RegisterType<IRepo<WarehouseStorage>, SQLRepo<WarehouseStorage>>();
         }
     }
 }
