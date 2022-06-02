@@ -3,6 +3,7 @@ using ShelbyChester.Core.Models;
 using ShelbyChester.DataAccess.InMemory;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -32,7 +33,7 @@ namespace ShelbyChester.WebUI.Controllers
             return View(containerCategory);
         }
         [HttpPost]
-        public ActionResult Create(ContainerCategory containerCategory)
+        public ActionResult Create(ContainerCategory containerCategory, HttpPostedFileBase file)
         {
             if (!ModelState.IsValid)
             {
@@ -40,6 +41,12 @@ namespace ShelbyChester.WebUI.Controllers
             }
             else
             {
+                if (file != null)
+                {
+                    containerCategory.Image = containerCategory.Id + Path.GetExtension(file.FileName);
+                    file.SaveAs(Server.MapPath("//Content//ContainerType//") + containerCategory.Image);
+                }
+
                 context.Insert(containerCategory);
                 context.Commit();
 
@@ -61,7 +68,7 @@ namespace ShelbyChester.WebUI.Controllers
             }
         }
         [HttpPost]
-        public ActionResult Edit(ContainerCategory containerCategory, string Id)
+        public ActionResult Edit(ContainerCategory containerCategory, string Id, HttpPostedFileBase file)
         {
             ContainerCategory containerCategoryToEdit = context.Find(Id);
 
@@ -75,6 +82,11 @@ namespace ShelbyChester.WebUI.Controllers
                 {
                     return View(containerCategory);
                 }
+                if (file != null)
+                {
+                    containerCategoryToEdit.Image = containerCategory.Id + Path.GetExtension(file.FileName);
+                    file.SaveAs(Server.MapPath("//Content//ContainerType//") + containerCategoryToEdit.Image);
+                }
 
                 containerCategoryToEdit.ContainerName = containerCategory.ContainerName;
                 containerCategoryToEdit.ContainerWeight = containerCategory.ContainerWeight;
@@ -86,6 +98,8 @@ namespace ShelbyChester.WebUI.Controllers
                 return RedirectToAction("Index");
             }
         }
+
+
 
         public ActionResult Delete(string Id)
         {

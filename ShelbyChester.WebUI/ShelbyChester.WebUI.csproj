@@ -223,6 +223,7 @@
     <Content Include="assets\images\c1.jpg" />
     <Content Include="assets\images\c2.jpg" />
     <Content Include="assets\images\c3.jpg" />
+    <Content Include="assets\images\ContainerType.jpeg" />
     <Content Include="assets\images\team1.jpg" />
     <Content Include="assets\images\team2.jpg" />
     <Content Include="assets\images\team3.jpg" />
@@ -347,16 +348,17 @@
     <Content Include="Views\FreightQuotationManager\Create.cshtml" />
     <Content Include="Views\FreightQuotationManager\Edit.cshtml" />
     <Content Include="Views\FreightQuotationManager\Delete.cshtml" />
-    <Content Include="Views\ContainerCategoryManager\Index.cshtml" />
-    <Content Include="Views\ContainerCategoryManager\Create.cshtml" />
-    <Content Include="Views\ContainerCategoryManager\Edit.cshtml" />
-    <Content Include="Views\ContainerCategoryManager\Delete.cshtml" />
     <Content Include="Views\ClientPreAdviceManager\Details.cshtml" />
     <Content Include="Views\Shared\_LayoutPageWithTheme.cshtml" />
     <Content Include="Views\ClientPreAdviceManager\Create.cshtml" />
+    <Content Include="Views\ContainerCategoryManager\Create.cshtml" />
+    <Content Include="Views\ContainerCategoryManager\Edit.cshtml" />
+    <Content Include="Views\ContainerCategoryManager\Delete.cshtml" />
+    <Content Include="Views\ContainerCategoryManager\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\ContainerType\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

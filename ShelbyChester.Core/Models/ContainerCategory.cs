@@ -11,6 +11,7 @@ namespace ShelbyChester.Core.Models
         public string ContainerName { get; set; }
         public int ContainerWeight { get; set; }
         public int ContainerSize { get; set; }
+        public string Image { get; set; }
 
     }
 }
