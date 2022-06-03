@@ -56,6 +56,10 @@
     <Compile Include="Migrations\202206011653296_Initial.designer.cs">
       <DependentUpon>202206011653296_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206031804581_ReturnToMainPc.cs" />
+    <Compile Include="Migrations\202206031804581_ReturnToMainPc.designer.cs">
+      <DependentUpon>202206031804581_ReturnToMainPc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLRepo.cs" />
@@ -73,6 +77,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202206011653296_Initial.resx">
       <DependentUpon>202206011653296_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206031804581_ReturnToMainPc.resx">
+      <DependentUpon>202206031804581_ReturnToMainPc.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
