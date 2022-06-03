@@ -200,19 +200,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202206030928020_ContainerRental.cs" />
-    <Compile Include="Migrations\202206030928020_ContainerRental.designer.cs">
-      <DependentUpon>202206030928020_ContainerRental.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206030940133_ContainerRental2.cs" />
-    <Compile Include="Migrations\202206030940133_ContainerRental2.designer.cs">
-      <DependentUpon>202206030940133_ContainerRental2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206031234430_Test2.cs" />
-    <Compile Include="Migrations\202206031234430_Test2.designer.cs">
-      <DependentUpon>202206031234430_Test2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -402,17 +389,6 @@
       <Project>{d4b2016f-8783-4f44-9394-ac33dd8e32b4}</Project>
       <Name>ShelbyChester.Services</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202206030928020_ContainerRental.resx">
-      <DependentUpon>202206030928020_ContainerRental.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206030940133_ContainerRental2.resx">
-      <DependentUpon>202206030940133_ContainerRental2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206031234430_Test2.resx">
-      <DependentUpon>202206031234430_Test2.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
