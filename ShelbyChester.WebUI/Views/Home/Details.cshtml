@@ -22,28 +22,28 @@
 
 <h2>@Html.DisplayFor(model => model.ContainerName)</h2>
 
-<div>
 
+<div class="row">
     <div class="col-md-2">
-        <img class="img-responsive" src="~/Content/ContainerType/@Model.Image"/>
+        <img class="img-responsive" src="~/Content/ContainerType/@Model.Image" />
     </div>
-    <div class="col-md-2">
+    <div class="col-md-10">
         <dl class="dl-horizontal">
             @*<dt>
-            @Html.DisplayNameFor(model => model.CreatedAt)
-        </dt>
+                    @Html.DisplayNameFor(model => model.CreatedAt)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CreatedAt)
-        </dd>*@
+                <dd>
+                    @Html.DisplayFor(model => model.CreatedAt)
+                </dd>*@
 
             @*<dt>
-            @Html.DisplayNameFor(model => model.ContainerName)
-        </dt>
+                    @Html.DisplayNameFor(model => model.ContainerName)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ContainerName)
-        </dd>*@
+                <dd>
+                    @Html.DisplayFor(model => model.ContainerName)
+                </dd>*@
 
             <dt>
                 @Html.DisplayNameFor(model => model.ContainerWeight)
@@ -62,20 +62,20 @@
             </dd>
 
             @*<dt>
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
+                    @Html.DisplayNameFor(model => model.Image)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Image)
-        </dd>*@
+                <dd>
+                    @Html.DisplayFor(model => model.Image)
+                </dd>*@
             <dt></dt>
-            <dd><a href="#" class="btn btn-deafult" /></dd>
+            <dd><a href="#" class="btn btn-deafult" style="background-color:lightblue" >Rent this Container!</a></dd>
             <dd>@Html.ActionLink("Back to List", "ContainerRentList")</dd>
         </dl>
-      </div>
     </div>
-    <!--<p>-->
-        @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
-        
-    <!--</p>-->
-<div class="col-md-12 clearfix"/>
+</div>
+<!--<p>-->
+@*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
+
+<!--</p>-->
+<div class="col-md-12 clearfix" />
