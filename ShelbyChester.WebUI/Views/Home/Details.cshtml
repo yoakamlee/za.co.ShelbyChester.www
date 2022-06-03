@@ -1,0 +1,81 @@
+﻿@model ShelbyChester.Core.Models.ContainerCategory
+
+@{
+    ViewBag.Title = Model.ContainerName + "Details";
+    Layout = "~/Views/Shared/_LayoutPageWithTheme.cshtml";
+}
+<div class="w3l-middle py-5" style="text-align: center; background: url(../../assets/images/ContainerRentPage1.jpeg) center; ">
+    <div class="container py-xl-5 py-lg-3">
+        <div class="welcome-left py-md-5 py-3">
+            <h6></h6>
+            <h4>Container List</h4>
+            <p class="pr-lg-5">
+                Confrim Selection
+            </p>
+            <div class="buttons mt-5">
+                <a></a>
+                <a></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2>@Html.DisplayFor(model => model.ContainerName)</h2>
+
+
+<div class="row">
+    <div class="col-md-2">
+        <img class="img-responsive" src="~/Content/ContainerType/@Model.Image" />
+    </div>
+    <div class="col-md-10">
+        <dl class="dl-horizontal">
+            @*<dt>
+                    @Html.DisplayNameFor(model => model.CreatedAt)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CreatedAt)
+                </dd>*@
+
+            @*<dt>
+                    @Html.DisplayNameFor(model => model.ContainerName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ContainerName)
+                </dd>*@
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ContainerWeight)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ContainerWeight)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ContainerSize)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ContainerSize)
+            </dd>
+
+            @*<dt>
+                    @Html.DisplayNameFor(model => model.Image)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Image)
+                </dd>*@
+            <dt></dt>
+            <dd><a href="#" class="btn btn-deafult" style="background-color:lightblue" >Rent this Container!</a></dd>
+            <dd>@Html.ActionLink("Back to List", "ContainerRentList")</dd>
+        </dl>
+    </div>
+</div>
+<!--<p>-->
+@*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
+
+<!--</p>-->
+<div class="col-md-12 clearfix" />

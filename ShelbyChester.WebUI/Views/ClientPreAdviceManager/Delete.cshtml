@@ -2,13 +2,30 @@
 
 @{
     ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutPageWithTheme.cshtml";
 }
 
-<h2>Delete</h2>
+@*Add this after (div class="w3l-middle py-5" style="text-align: center) to change background image
+    ; background: url(../../assets/images/ContainerType.jpeg) center; "*@
+<div class="w3l-middle py-5" style="text-align: center; background: url(../../assets/images/ContainerType.jpeg) center; ">
+    <div class="container py-xl-5 py-lg-3">
+        <div class="welcome-left py-md-5 py-3">
+            <h6></h6>
+            <h4>Client pre-advice</h4>
+            <p class="pr-lg-5">
+                Confirm deletion of your pre-advice
+            </p>
+            <div class="buttons mt-5">
+                <a></a>
+                <a></a>
+            </div>
+        </div>
+    </div>
+</div>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>ClientPreAdvice</h4>
+<div style="padding-top: 25px; padding-left: 30px; padding-right: 30px; padding-bottom:50px">
+    <h2>Delete</h2>
+    <h3>Are you sure you want to delete this?</h3>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -85,7 +102,8 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">

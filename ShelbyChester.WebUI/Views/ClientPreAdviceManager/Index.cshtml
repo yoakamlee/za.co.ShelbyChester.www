@@ -2,80 +2,99 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPageWithTheme.cshtml";
 }
+@*Add this after (div class="w3l-middle py-5" style="text-align: center) to change background image
+    ; background: url(../../assets/images/ContainerType.jpeg) center; "*@
+<div class="w3l-middle py-5" style="text-align: center; background: url(../../assets/images/ContainerType.jpeg) center; ">
+    <div class="container py-xl-5 py-lg-3">
+        <div class="welcome-left py-md-5 py-3">
+            <h6></h6>
+            <h4>Client pre-advice</h4>
+            <p class="pr-lg-5">
+                List for clients expecting resutls
+            </p>
+            <div class="buttons mt-5">
+                <a></a>
+                <a></a>
+            </div>
+        </div>
+    </div>
+</div>
 
-<h2>Index</h2>
+<div style="padding-top: 25px; padding-left: 30px; padding-right: 30px; padding-bottom:50px">
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer_Surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer_Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer_Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer_CellNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfItems)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeightOfItems)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SizePerItem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Client_Description)
+            </th>
+            <th></th>
+        </tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Customer_Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Customer_Surname)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Customer_Address)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Customer_Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Customer_CellNum)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NumberOfItems)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.WeightOfItems)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SizePerItem)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Client_Description)
-        </th>
-        <th></th>
-    </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer_Surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer_Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer_Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer_CellNum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberOfItems)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WeightOfItems)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SizePerItem)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Client_Description)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Customer_Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Customer_Surname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Customer_Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Customer_Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Customer_CellNum)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumberOfItems)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WeightOfItems)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SizePerItem)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Client_Description)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-
-</table>
+    </table>
+</div>

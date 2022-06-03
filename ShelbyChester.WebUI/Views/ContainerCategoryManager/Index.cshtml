@@ -2,44 +2,75 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPageWithTheme.cshtml";
 }
+<div class="w3l-middle py-5" style="text-align:center">
+    <div class="container py-xl-5 py-lg-3">
+        <div class="welcome-left py-md-5 py-3">
+            <h6></h6>
+            <h4>Container Type</h4>
+            <p class="pr-lg-5">
+                Add or edit container types
+            </p>
+            <div class="buttons mt-5">
+                <a></a>
+                <a></a>
+            </div>
+        </div>
+    </div>
+</div>
 
-<h2>Index</h2>
+<div style="padding-top: 25px; padding-left: 30px; padding-right: 30px; padding-bottom:50px">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ContainerName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ContainerWeight)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ContainerSize)
-        </th>
-        <th></th>
-    </tr>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ContainerName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ContainerWeight)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ContainerSize)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @*@Html.ActionLink("Details", "Details", new { id=item.Id }) |*@
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContainerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContainerWeight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContainerSize)
+            </th>
+            <th></th>
+        </tr>
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img class="img-thumbnail" style="height:50px" src="~/Content/ContainerType/@item.Image" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedAt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContainerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContainerWeight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContainerSize)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @*@Html.ActionLink("Details", "Details", new { id = item.Id }) |*@
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
