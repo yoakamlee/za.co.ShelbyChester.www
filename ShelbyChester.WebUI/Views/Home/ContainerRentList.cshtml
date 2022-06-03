@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ShelbyChester.Core.Models.ContainerCategory>
+@{
+    ViewBag.Title = "ContainerRentList";
+    Layout = "~/Views/Shared/_LayoutPageWithTheme.cshtml";
+}
+<div class="w3l-middle py-5" style="text-align: center; background: url(../../assets/images/ContainerRentPage1.jpeg) center; ">
+    <div class="container py-xl-5 py-lg-3">
+        <div class="welcome-left py-md-5 py-3">
+            <h6></h6>
+            <h4>Container List</h4>
+            <p class="pr-lg-5">
+                Rent your very own container now!
+            </p>
+            <div class="buttons mt-5">
+                <a></a>
+                <a></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2></h2>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4" style="height:450px; padding:10px;margin:10px;border: solid thin whitesmoke">
+            <div class="col-md-12">
+                <img class="img" style="height:250px" src="~/Content/ContainerType/@item.Image" />
+            </div>
+            <div class="col-md-12">
+                <strong>
+                    @Html.ActionLink(item.ContainerName, "Details",
+               new { id = item.Id })
+            </strong>
+        </div>
+        <div class="col-md-12">
+            <a href="#" class="btn btn-default">Rent container!</a>
+        </div>
+    </div>
+}
+</div>
+<div class="col-md-12 clearfix"/>

@@ -208,6 +208,10 @@
     <Compile Include="Migrations\202206030940133_ContainerRental2.designer.cs">
       <DependentUpon>202206030940133_ContainerRental2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206031234430_Test2.cs" />
+    <Compile Include="Migrations\202206031234430_Test2.designer.cs">
+      <DependentUpon>202206031234430_Test2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -233,6 +237,7 @@
     <Content Include="assets\images\c1.jpg" />
     <Content Include="assets\images\c2.jpg" />
     <Content Include="assets\images\c3.jpg" />
+    <Content Include="assets\images\ContainerRentPage1.jpeg" />
     <Content Include="assets\images\ContainerType.jpeg" />
     <Content Include="assets\images\team1.jpg" />
     <Content Include="assets\images\team2.jpg" />
@@ -370,6 +375,8 @@
     <Content Include="Views\ContainerRentalManager\Delete.cshtml" />
     <Content Include="Views\ContainerRentalManager\Details.cshtml" />
     <Content Include="Views\ContainerRentalManager\Create.cshtml" />
+    <Content Include="Views\Home\ContainerRentList.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -402,6 +409,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206030940133_ContainerRental2.resx">
       <DependentUpon>202206030940133_ContainerRental2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206031234430_Test2.resx">
+      <DependentUpon>202206031234430_Test2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
