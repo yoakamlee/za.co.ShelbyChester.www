@@ -7,7 +7,7 @@
     <div class="container py-xl-5 py-lg-3">
         <div class="welcome-left py-md-5 py-3">
             <h6></h6>
-            <h4>Container List</h4>
+            <h4>Select desired Container</h4>
             <p class="pr-lg-5">
                 Rent your very own container now!
             </p>
@@ -23,7 +23,7 @@
 <div class="row">
     @foreach (var item in Model)
     {
-        <div class="col-md-4" style="height:450px; padding:10px;margin:10px;border: solid thin whitesmoke">
+        <div class="row-cols-md-3" style="height:450px; padding:10px;margin:10px;border: solid thin whitesmoke">
             <div class="col-md-12">
                 <img class="img" style="height:250px" src="~/Content/ContainerType/@item.Image" />
             </div>
