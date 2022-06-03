@@ -23,8 +23,8 @@ namespace ShelbyChester.WebUI.Controllers
         // GET: ContainerRentalManager
         public ActionResult Index()
         {
-            List<ContainerRental> containerRental = context.Collection().ToList();
-            return View(containerRental);
+            List<ContainerRental> containerRentals = context.Collection().ToList();
+            return View(containerRentals);
         }
 
         //Container create
