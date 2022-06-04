@@ -15,7 +15,7 @@ namespace ShelbyChester.Core.Models
         [Display(Name = "Container Capacity(cubic ft)")]
         public int ContainerCapacity { get; set; }
 
-        [Display(Name = "Container height(ft)")]
+        [Display(Name = "Container Size(ft)")]
         public int ContainerSize { get; set; }
 
         [Display(Name ="Base Rental Price")]
