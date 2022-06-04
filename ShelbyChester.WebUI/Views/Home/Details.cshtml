@@ -20,10 +20,10 @@
     </div>
 </div>
 
-<h2>@Html.DisplayFor(model => model.ContainerName)</h2>
+<h2 >@Html.DisplayFor(model => model.ContainerName)</h2>
 
 
-<div class="row">
+<div class="row"style="padding-top: 25px; padding-left: 30px; padding-right: 30px; padding-bottom: 50px">
     <div class="col-md-2">
         <img class="img-responsive" src="~/Content/ContainerType/@Model.Image" />
     </div>
@@ -61,7 +61,7 @@
                 @Html.DisplayFor(model => model.ContainerSize)
             </dd>
             <dd>
-                @Html.DisplayFor(model => model.ContainerPrice)
+               R @Html.DisplayFor(model => model.ContainerPrice)
             </dd>
 
             @*<dt>
