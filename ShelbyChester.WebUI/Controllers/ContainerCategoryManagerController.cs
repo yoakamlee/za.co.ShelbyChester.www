@@ -89,8 +89,9 @@ namespace ShelbyChester.WebUI.Controllers
                 }
 
                 containerCategoryToEdit.ContainerName = containerCategory.ContainerName;
-                containerCategoryToEdit.ContainerWeight = containerCategory.ContainerWeight;
+                containerCategoryToEdit.ContainerCapacity = containerCategory.ContainerCapacity;
                 containerCategoryToEdit.ContainerSize = containerCategory.ContainerSize;
+                containerCategoryToEdit.ContainerPrice = containerCategory.ContainerPrice;
 
 
                 context.Commit();

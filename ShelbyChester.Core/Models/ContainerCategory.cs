@@ -17,6 +17,9 @@ namespace ShelbyChester.Core.Models
 
         [Display(Name = "Container height(ft)")]
         public int ContainerSize { get; set; }
+
+        [Display(Name ="Base Rental Price")]
+        public decimal ContainerPrice { get; set; }
         public string Image { get; set; }
 
     }

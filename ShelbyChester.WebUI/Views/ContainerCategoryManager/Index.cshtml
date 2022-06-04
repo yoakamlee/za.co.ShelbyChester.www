@@ -37,38 +37,44 @@
                 @Html.DisplayNameFor(model => model.ContainerName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ContainerWeight)
+                @Html.DisplayNameFor(model => model.ContainerCapacity)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ContainerSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContainerPrice)
             </th>
             <th></th>
         </tr>
 
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    <img class="img-thumbnail" style="height:50px" src="~/Content/ContainerType/@item.Image" />
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreatedAt)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ContainerName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ContainerWeight)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ContainerSize)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @*@Html.ActionLink("Details", "Details", new { id = item.Id }) |*@
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                </td>
-            </tr>
+    <tr>
+        <td>
+            <img class="img-thumbnail" style="height:50px" src="~/Content/ContainerType/@item.Image" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedAt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContainerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContainerCapacity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContainerSize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContainerPrice)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @*@Html.ActionLink("Details", "Details", new { id = item.Id }) |*@
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+        </td>
+    </tr>
         }
 
     </table>
