@@ -89,7 +89,7 @@ namespace ShelbyChester.WebUI.Controllers
                 containerRentalToEdit.loadingLocation = containerRental.loadingLocation;
                 containerRentalToEdit.locationType = containerRental.locationType;
                 containerRentalToEdit.numberOfContainers = containerRental.numberOfContainers;
-                containerRentalToEdit.rentInDate = containerRental.rentInDate;
+                //containerRentalToEdit.rentInDate = containerRental.rentInDate;
                 containerRentalToEdit.weightPerItem = containerRental.weightPerItem;
                 containerRentalToEdit.numberOfItems = containerRental.numberOfItems;
                 containerRentalToEdit.Name = containerRental.Name;

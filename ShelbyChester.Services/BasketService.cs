@@ -12,6 +12,7 @@ namespace ShelbyChester.Services
 {
     public class BasketService : IBasketService
     {
+
         IRepo<ContainerCategory> containerCategoryContext;
         IRepo<Basket> basketContext;
 
@@ -24,17 +25,18 @@ namespace ShelbyChester.Services
         }
 
         private Basket GetBasket(HttpContextBase httpContext, bool createIfNull)
-        {
+         {
             HttpCookie cookie = httpContext.Request.Cookies.Get(BasketSessionName);
 
             Basket basket = new Basket();
 
             if (cookie != null)
             {
-                string Basket_Id = cookie.Value;
-                if (!string.IsNullOrEmpty(Basket_Id))
+                string BasketId = cookie.Value;
+                if (!string.IsNullOrEmpty(BasketId)) 
                 {
-                    basket = basketContext.Find(Basket_Id);
+                    //TO DO  add null check
+                    basket = basketContext.Find(BasketId) ?? CreateNewBasket(httpContext);
                 }
                 else
                 {
@@ -68,17 +70,18 @@ namespace ShelbyChester.Services
             return basket;
         }
 
-        public void AddToBasket(HttpContextBase httpContext, string container_Id)
+        public void AddToBasket(HttpContextBase httpContext, string containerId)
         {
             Basket basket = GetBasket(httpContext, true);
-            BasketItem item = basket.BasketItems.FirstOrDefault(x => x.Container_Id == container_Id);
+
+            BasketItem item = basket.BasketItems.FirstOrDefault(x => x.ContainerCategoryId == containerId);
 
             if (item == null)
             {
                 item = new BasketItem()
                 {
-                    Basket_Id = basket.Id,
-                    Container_Id = container_Id,
+                    BasketId = basket.Id,
+                    ContainerCategoryId = containerId,
                     Quantity = 1,
                 };
                 basket.BasketItems.Add(item);
@@ -112,7 +115,7 @@ namespace ShelbyChester.Services
             {
                 var result = (from b in basket.BasketItems
                               join c in containerCategoryContext.Collection()
-                              on b.Container_Id equals c.Id
+                              on b.ContainerCategoryId equals c.Id
                               select new BasketItemViewModel()
                               {
                                   Id = b.Id,
@@ -143,7 +146,7 @@ namespace ShelbyChester.Services
 
                 decimal? basketTotal = (from item in basket.BasketItems
                                         join c in containerCategoryContext.Collection()
-                                        on item.Container_Id equals c.Id
+                                        on item.ContainerCategoryId equals c.Id
                                         select item.Quantity * c.ContainerPrice
                                         ).Sum();
 

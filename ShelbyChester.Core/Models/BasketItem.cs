@@ -8,8 +8,8 @@ namespace ShelbyChester.Core.Models
 {
     public class BasketItem : BaseEntity
     {
-        public string Basket_Id { get; set; }
-        public string Container_Id { get; set; }
+        public string BasketId { get; set; }
+        public string ContainerCategoryId { get; set; }
         public int Quantity { get; set; }
     }
 }

@@ -26,10 +26,13 @@
                     <li>@Html.ActionLink("Warehouse List", "Index", "WarehouseManager")</li>
                     <li>@Html.ActionLink("Freight Quotes", "Index", "FreightQuotationManager")</li>
                     <li>@Html.ActionLink("Container Category", "Index", "ContainerCategoryManager")</li>
-                    
+
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
+                @{
+                    Html.RenderAction("BasketSummary", "Basket");
+                }
             </div>
         </div>
     </div>

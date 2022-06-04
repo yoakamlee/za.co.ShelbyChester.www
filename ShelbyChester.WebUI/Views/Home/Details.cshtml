@@ -72,7 +72,7 @@
             @Html.DisplayFor(model => model.Image)
         </dd>*@
             <dt></dt>
-            <dd><a href="#" class="btn btn-deafult" style="background-color:lightblue">Rent this Container!</a></dd>
+            <dd><a href="@Url.Action("Create","ContainerRentalManager", new {Id = Model.Id})" class="btn btn-deafult" style="background-color:lightblue">Rent this Container!</a></dd>
             <dd>@Html.ActionLink("Back to List", "ContainerRentList")</dd>
         </dl>
     </div>

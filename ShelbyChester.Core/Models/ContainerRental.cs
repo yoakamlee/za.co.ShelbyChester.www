@@ -41,9 +41,9 @@ namespace ShelbyChester.Core.Models
         [Required(ErrorMessage = "Please complete missing information")]
         public string loadingLocation { get; set; }
 
-        [Display(Name ="Pick up Date")]
-        [Required(ErrorMessage = "Please complete missing information")]
-        public DateTime rentInDate { get; set; }
+        //[Display(Name ="Pick up Date")]
+        //[Required(ErrorMessage = "Please complete missing information")]
+        //public DateTime rentInDate { get; set; }
         
         public string Image { get; set; }
 

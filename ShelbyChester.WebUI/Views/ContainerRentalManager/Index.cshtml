@@ -33,9 +33,9 @@
         <th>
             @Html.DisplayNameFor(model => model.loadingLocation)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.rentInDate)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -62,9 +62,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.loadingLocation)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.rentInDate)
-        </td>
+        </td>*@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |

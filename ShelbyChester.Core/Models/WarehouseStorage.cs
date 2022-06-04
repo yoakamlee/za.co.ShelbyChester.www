@@ -13,7 +13,7 @@ namespace ShelbyChester.Core.Models
         [DisplayName("Warehouse Name")]
         public string Name { get; set; }
 
-        [DisplayName("Wrehouse Location")]
+        [DisplayName("Warehouse Location")]
         public string Location { get; set; }
 
     }
