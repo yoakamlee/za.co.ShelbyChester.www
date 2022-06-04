@@ -26,7 +26,7 @@ namespace ShelbyChester.WebUI.Controllers
         {
             basketService.AddToBasket(this.HttpContext, Id);
 
-            return RedirectToAction("ContainerRentList","Home");
+            return RedirectToAction("Index");
         }
 
         public ActionResult RemoveFromBasket(string Id)

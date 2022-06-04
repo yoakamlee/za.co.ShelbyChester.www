@@ -10,7 +10,6 @@ namespace ShelbyChester.Core.ViewModels
     public class ContainerCategoryViewModel
     {
         public ClientPreAdvice ClientPreAdvice { get; set; }
-        public ContainerRental ContainerRental { get; set; }
         public IEnumerable<ContainerCategory> ContainerCategories { get; set; }
     }
 }

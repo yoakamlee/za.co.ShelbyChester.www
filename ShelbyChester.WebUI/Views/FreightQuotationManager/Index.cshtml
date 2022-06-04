@@ -27,12 +27,7 @@
         <th>
             @Html.DisplayNameFor(model => model.size)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.basicprice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.totalPrice)
-        </th>
+        
         <th></th>
     </tr>
 
@@ -53,12 +48,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.size)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.basicprice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.totalPrice)
-        </td>
+        
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @*@Html.ActionLink("Details", "Details", new { id=item.Id }) |*@

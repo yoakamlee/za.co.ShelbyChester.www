@@ -10,13 +10,10 @@ namespace ShelbyChester.WebUI.Controllers
 {
     public class HomeController : Controller
     {
-        IRepo<ContainerRental> context;
         IRepo<ContainerCategory> containerRepo;
 
-        public HomeController(IRepo<ContainerRental> containerRentalContext,
-                                                IRepo<ContainerCategory> containerCategoryContext)
+        public HomeController(IRepo<ContainerCategory> containerCategoryContext)
         {
-            context = containerRentalContext;
             containerRepo = containerCategoryContext;
         }
 

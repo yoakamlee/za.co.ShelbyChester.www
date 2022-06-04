@@ -31,23 +31,5 @@ namespace ShelbyChester.Core.Models
         [Required(ErrorMessage = "enter the size of a container")]
         [DisplayName("size")]
         public string size { get; set; }
-
-        public double basicprice { get; set; }
-
-        public double totalPrice { get; set; }
-
-
-        public double basicCost()
-        {
-            return Price * quantity;
-        }
-
-        public double calctot()
-        {
-            double total = 0;
-            total = +basicCost();
-            return (total);
-        }
-
     }
 }
