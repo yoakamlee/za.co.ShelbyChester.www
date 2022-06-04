@@ -68,6 +68,10 @@
     <Compile Include="Migrations\202206041036022_EditedContainerCategory.designer.cs">
       <DependentUpon>202206041036022_EditedContainerCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206041518349_FinishedBasketServiceLogic.cs" />
+    <Compile Include="Migrations\202206041518349_FinishedBasketServiceLogic.designer.cs">
+      <DependentUpon>202206041518349_FinishedBasketServiceLogic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLRepo.cs" />
@@ -94,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206041036022_EditedContainerCategory.resx">
       <DependentUpon>202206041036022_EditedContainerCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206041518349_FinishedBasketServiceLogic.resx">
+      <DependentUpon>202206041518349_FinishedBasketServiceLogic.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
