@@ -92,6 +92,14 @@
     <Compile Include="Migrations\202206042220359_RemovedContainerRental.designer.cs">
       <DependentUpon>202206042220359_RemovedContainerRental.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206042227207_ThingsChanged.cs" />
+    <Compile Include="Migrations\202206042227207_ThingsChanged.designer.cs">
+      <DependentUpon>202206042227207_ThingsChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206042240318_ChangeName.cs" />
+    <Compile Include="Migrations\202206042240318_ChangeName.designer.cs">
+      <DependentUpon>202206042240318_ChangeName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLRepo.cs" />
@@ -136,6 +144,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206042220359_RemovedContainerRental.resx">
       <DependentUpon>202206042220359_RemovedContainerRental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206042227207_ThingsChanged.resx">
+      <DependentUpon>202206042227207_ThingsChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206042240318_ChangeName.resx">
+      <DependentUpon>202206042240318_ChangeName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

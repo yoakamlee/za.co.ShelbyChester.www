@@ -42,5 +42,6 @@ namespace ShelbyChester.WebUI.Controllers
 
             return PartialView(basketSummary);
         }
+
     }
 }
