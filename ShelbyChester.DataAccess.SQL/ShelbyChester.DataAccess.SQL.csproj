@@ -100,6 +100,10 @@
     <Compile Include="Migrations\202206042240318_ChangeName.designer.cs">
       <DependentUpon>202206042240318_ChangeName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206042253497_something.cs" />
+    <Compile Include="Migrations\202206042253497_something.designer.cs">
+      <DependentUpon>202206042253497_something.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLRepo.cs" />
@@ -150,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206042240318_ChangeName.resx">
       <DependentUpon>202206042240318_ChangeName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206042253497_something.resx">
+      <DependentUpon>202206042253497_something.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
