@@ -56,6 +56,10 @@
     <Compile Include="Migrations\202206051846072_OrdersAlter.designer.cs">
       <DependentUpon>202206051846072_OrdersAlter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206052135433_EmployeeRole.cs" />
+    <Compile Include="Migrations\202206052135433_EmployeeRole.designer.cs">
+      <DependentUpon>202206052135433_EmployeeRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLRepo.cs" />
@@ -73,6 +77,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202206051846072_OrdersAlter.resx">
       <DependentUpon>202206051846072_OrdersAlter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206052135433_EmployeeRole.resx">
+      <DependentUpon>202206052135433_EmployeeRole.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

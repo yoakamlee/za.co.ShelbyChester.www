@@ -37,6 +37,7 @@ namespace ShelbyChester.WebUI.Controllers
                 "Order Shipped",
                 "Order Complete"
             };
+
             Order order = orderService.GetOrder(Id);
             return View(order);
         }
