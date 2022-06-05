@@ -56,7 +56,11 @@ namespace ShelbyChester.WebUI
             container.RegisterType<IRepo<Customer>, SQLRepo<Customer>>();
             container.RegisterType<IRepo<Employee>, SQLRepo<Employee>>();
             container.RegisterType<IRepo<Driver>, SQLRepo<Driver>>();
+            container.RegisterType<IRepo<Order>, SQLRepo<Order>>();
+
+
             container.RegisterType<IBasketService, BasketService>();
+            container.RegisterType<IOrderService, OrderService>();
         }
     }
 }
