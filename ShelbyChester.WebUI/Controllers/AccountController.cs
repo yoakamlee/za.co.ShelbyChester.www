@@ -8,6 +8,8 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using ShelbyChester.Core.Contracts;
+using ShelbyChester.Core.Models;
 using ShelbyChester.WebUI.Models;
 
 namespace ShelbyChester.WebUI.Controllers
@@ -17,15 +19,17 @@ namespace ShelbyChester.WebUI.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private IRepo<Customer> customerRepo;
 
-        public AccountController()
-        {
-        }
+        //public AccountController()
+        //{
+        //}
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(IRepo<Customer> CustomerRepo )
         {
-            UserManager = userManager;
-            SignInManager = signInManager;
+            
+            this.customerRepo = CustomerRepo;
+            
         }
 
         public ApplicationSignInManager SignInManager
@@ -155,6 +159,21 @@ namespace ShelbyChester.WebUI.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    //Register the customer model
+                    Customer customer = new Customer()
+                    {
+                        City = model.City,
+                        Email = model.Email,
+                        FirstName = model.FirstName,
+                        LastName = model.LastName,
+                        Address = model.Address,
+                        postalCode = model.postalCode,
+                        UserId = user.Id,
+
+                    };
+                    customerRepo.Insert(customer);
+                    customerRepo.Commit();
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771

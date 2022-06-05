@@ -24,5 +24,6 @@ namespace ShelbyChester.DataAccess.SQL
         public DbSet<ContainerRent> ContainerRents { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Driver> Drivers { get; set; }
+        public DbSet<Customer> Customers { get; set; }
     }
 }
