@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace ShelbyChester.WebUI.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ContainerCategoryManagerController : Controller
     {
 
