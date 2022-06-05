@@ -51,6 +51,8 @@
     <Compile Include="Models\ClientPreAdvice.cs" />
     <Compile Include="Models\ContainerCategory.cs" />
     <Compile Include="Models\ContainerRent.cs" />
+    <Compile Include="Models\Driver.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\FreightQuotation.cs" />
     <Compile Include="Models\WarehouseStorage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -22,5 +22,7 @@ namespace ShelbyChester.DataAccess.SQL
         public DbSet<Basket> Baskets { get; set; }
         public DbSet<BasketItem> BasketItems { get; set; }
         public DbSet<ContainerRent> ContainerRents { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Driver> Drivers { get; set; }
     }
 }
