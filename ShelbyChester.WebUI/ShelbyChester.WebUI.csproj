@@ -193,6 +193,7 @@
     <Compile Include="Controllers\BasketController.cs" />
     <Compile Include="Controllers\ClientPreAdviceManagerController.cs" />
     <Compile Include="Controllers\ContainerCategoryManagerController.cs" />
+    <Compile Include="Controllers\ContainerRentManagerController.cs" />
     <Compile Include="Controllers\FreightQuotationManagerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -361,6 +362,8 @@
     <Content Include="Views\Home\Details.cshtml" />
     <Content Include="Views\Basket\Index.cshtml" />
     <Content Include="Views\Basket\BasketSummary.cshtml" />
+    <Content Include="Views\ContainerRentManager\Index.cshtml" />
+    <Content Include="Views\ContainerRentManager\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

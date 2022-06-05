@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShelbyChester.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +14,6 @@ namespace ShelbyChester.Core.ViewModels
         public string ContainerName { get; set; }
         public decimal ContainerPrice { get; set; }
         public string Image { get; set; }
+
     }
 }

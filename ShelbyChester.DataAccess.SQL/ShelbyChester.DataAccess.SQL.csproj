@@ -52,57 +52,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
-    <Compile Include="Migrations\202206011653296_Initial.cs" />
-    <Compile Include="Migrations\202206011653296_Initial.designer.cs">
-      <DependentUpon>202206011653296_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202206050131585_test1.cs" />
+    <Compile Include="Migrations\202206050131585_test1.designer.cs">
+      <DependentUpon>202206050131585_test1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202206031804581_ReturnToMainPc.cs" />
-    <Compile Include="Migrations\202206031804581_ReturnToMainPc.designer.cs">
-      <DependentUpon>202206031804581_ReturnToMainPc.cs</DependentUpon>
+    <Compile Include="Migrations\202206050141347_test2.cs" />
+    <Compile Include="Migrations\202206050141347_test2.designer.cs">
+      <DependentUpon>202206050141347_test2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202206040859314_AddBasket.cs" />
-    <Compile Include="Migrations\202206040859314_AddBasket.designer.cs">
-      <DependentUpon>202206040859314_AddBasket.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206041036022_EditedContainerCategory.cs" />
-    <Compile Include="Migrations\202206041036022_EditedContainerCategory.designer.cs">
-      <DependentUpon>202206041036022_EditedContainerCategory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206041518349_FinishedBasketServiceLogic.cs" />
-    <Compile Include="Migrations\202206041518349_FinishedBasketServiceLogic.designer.cs">
-      <DependentUpon>202206041518349_FinishedBasketServiceLogic.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206041744195_BasketViews.cs" />
-    <Compile Include="Migrations\202206041744195_BasketViews.designer.cs">
-      <DependentUpon>202206041744195_BasketViews.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206041805222_Test3.cs" />
-    <Compile Include="Migrations\202206041805222_Test3.designer.cs">
-      <DependentUpon>202206041805222_Test3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206041841190_Test4.cs" />
-    <Compile Include="Migrations\202206041841190_Test4.designer.cs">
-      <DependentUpon>202206041841190_Test4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206042122477_Test89.cs" />
-    <Compile Include="Migrations\202206042122477_Test89.designer.cs">
-      <DependentUpon>202206042122477_Test89.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206042220359_RemovedContainerRental.cs" />
-    <Compile Include="Migrations\202206042220359_RemovedContainerRental.designer.cs">
-      <DependentUpon>202206042220359_RemovedContainerRental.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206042227207_ThingsChanged.cs" />
-    <Compile Include="Migrations\202206042227207_ThingsChanged.designer.cs">
-      <DependentUpon>202206042227207_ThingsChanged.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206042240318_ChangeName.cs" />
-    <Compile Include="Migrations\202206042240318_ChangeName.designer.cs">
-      <DependentUpon>202206042240318_ChangeName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206042253497_something.cs" />
-    <Compile Include="Migrations\202206042253497_something.designer.cs">
-      <DependentUpon>202206042253497_something.cs</DependentUpon>
+    <Compile Include="Migrations\202206050145393_ContainerRentTest1.cs" />
+    <Compile Include="Migrations\202206050145393_ContainerRentTest1.designer.cs">
+      <DependentUpon>202206050145393_ContainerRentTest1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -119,44 +79,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202206011653296_Initial.resx">
-      <DependentUpon>202206011653296_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202206050131585_test1.resx">
+      <DependentUpon>202206050131585_test1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206031804581_ReturnToMainPc.resx">
-      <DependentUpon>202206031804581_ReturnToMainPc.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202206050141347_test2.resx">
+      <DependentUpon>202206050141347_test2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206040859314_AddBasket.resx">
-      <DependentUpon>202206040859314_AddBasket.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206041036022_EditedContainerCategory.resx">
-      <DependentUpon>202206041036022_EditedContainerCategory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206041518349_FinishedBasketServiceLogic.resx">
-      <DependentUpon>202206041518349_FinishedBasketServiceLogic.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206041744195_BasketViews.resx">
-      <DependentUpon>202206041744195_BasketViews.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206041805222_Test3.resx">
-      <DependentUpon>202206041805222_Test3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206041841190_Test4.resx">
-      <DependentUpon>202206041841190_Test4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206042122477_Test89.resx">
-      <DependentUpon>202206042122477_Test89.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206042220359_RemovedContainerRental.resx">
-      <DependentUpon>202206042220359_RemovedContainerRental.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206042227207_ThingsChanged.resx">
-      <DependentUpon>202206042227207_ThingsChanged.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206042240318_ChangeName.resx">
-      <DependentUpon>202206042240318_ChangeName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206042253497_something.resx">
-      <DependentUpon>202206042253497_something.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202206050145393_ContainerRentTest1.resx">
+      <DependentUpon>202206050145393_ContainerRentTest1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
