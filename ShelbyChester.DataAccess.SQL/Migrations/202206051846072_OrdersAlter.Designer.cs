@@ -7,13 +7,13 @@ namespace ShelbyChester.DataAccess.SQL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class ContainerRentTest3 : IMigrationMetadata
+    public sealed partial class OrdersAlter : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ContainerRentTest3));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(OrdersAlter));
         
         string IMigrationMetadata.Id
         {
-            get { return "202206050254276_ContainerRentTest3"; }
+            get { return "202206051846072_OrdersAlter"; }
         }
         
         string IMigrationMetadata.Source

@@ -2,21 +2,35 @@
     ViewBag.Title = "Admin";
     Layout = "~/Views/Shared/_LayoutPageWithTheme.cshtml";
 }
+<div class="w3l-middle py-5" style="text-align: center; background: url(../../assets/images/ContainerRentPage1.jpeg) center; ">
+    <div class="container py-xl-5 py-lg-3">
+        <div class="welcome-left py-md-5 py-3">
+            <h6></h6>
+            <h4>Admin page</h4>
+            <p class="pr-lg-5">
+            </p>
+            <div class="buttons mt-5">
+                <a></a>
+                <a></a>
+            </div>
+        </div>
+    </div>
+</div>
 
 <h3>Admin page</h3>
 
-<div class="col-md-5">
+<div class="col-md-5"style="padding:10px;margin:10px;border: solid thin whitesmoke">
     <h4>Container Management</h4>
     <div class="list-group">
-        @Html.ActionLink("Container Category", "Index", "ContainerCategoryManager"
-       , null, new { @class = "list" })
+        @*@Html.ActionLink("Container Category", "Index", "ContainerCategoryManager"
+       , null, new { @class = "list" })*@
         @Html.ActionLink("Container Category", "Index", "ContainerCategoryManager"
        , null, new { @class = "list" })
     </div>
 </div>
 
 <div class="col-md-5">
-    <h4>Container Management</h4>
+    <h4>Order Management</h4>
     <div class="list-group">
         @Html.ActionLink("Orders", "Index", "OrderManager"
        , null, new { @class = "list" })

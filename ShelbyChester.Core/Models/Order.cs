@@ -20,6 +20,7 @@ namespace ShelbyChester.Core.Models
         public string City { get; set; }
         public string postalCode { get; set; }
         public string OrderStatus { get; set; }
+        public string EmployeeId { get; set; }
         public virtual ICollection<OrderItem> OrderItems { get; set; }
     }
 }

@@ -8,22 +8,26 @@ using System.Web.Mvc;
 
 namespace ShelbyChester.WebUI.Controllers
 {
-    [Authorize(Roles = "Admin")]
     public class OrderManagerController : Controller
     {
         IOrderService orderService;
+        IRepo<Customer> customers;
 
-        public OrderManagerController(IOrderService OrderService)
+        public OrderManagerController(IOrderService OrderService, IRepo<Customer> Customers)
         {
             this.orderService = OrderService;
+            this.customers = Customers;
         }
+        
+
         // GET: OrderManager
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             List<Order> orders = orderService.GetOrderList();
             return View(orders);
         }
-
+        [Authorize(Roles = "Admin")]
         public ActionResult UpdateOrder(string Id)
         {
             ViewBag.StatusList = new List<string>()
@@ -38,6 +42,7 @@ namespace ShelbyChester.WebUI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public ActionResult UpdateOrder(Order updateOrder, string Id)
         {
             Order order = orderService.GetOrder(Id);

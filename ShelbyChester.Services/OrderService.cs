@@ -28,7 +28,6 @@ namespace ShelbyChester.Services
                     Price = item.ContainerPrice,
                     ContainerName = item.ContainerName,
                     Quaintity = item.Quantity
-
                 });
             }
 

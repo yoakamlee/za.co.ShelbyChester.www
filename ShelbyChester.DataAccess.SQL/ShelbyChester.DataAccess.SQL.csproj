@@ -52,85 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
-    <Compile Include="Migrations\202206050131585_test1.cs" />
-    <Compile Include="Migrations\202206050131585_test1.designer.cs">
-      <DependentUpon>202206050131585_test1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206050141347_test2.cs" />
-    <Compile Include="Migrations\202206050141347_test2.designer.cs">
-      <DependentUpon>202206050141347_test2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206050145393_ContainerRentTest1.cs" />
-    <Compile Include="Migrations\202206050145393_ContainerRentTest1.designer.cs">
-      <DependentUpon>202206050145393_ContainerRentTest1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206050250295_ContainerRentTest2.cs" />
-    <Compile Include="Migrations\202206050250295_ContainerRentTest2.designer.cs">
-      <DependentUpon>202206050250295_ContainerRentTest2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206050254276_ContainerRentTest3.cs" />
-    <Compile Include="Migrations\202206050254276_ContainerRentTest3.designer.cs">
-      <DependentUpon>202206050254276_ContainerRentTest3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206050256019_ContainerRentTest4.cs" />
-    <Compile Include="Migrations\202206050256019_ContainerRentTest4.designer.cs">
-      <DependentUpon>202206050256019_ContainerRentTest4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206050305418_ContainerRentTest5.cs" />
-    <Compile Include="Migrations\202206050305418_ContainerRentTest5.designer.cs">
-      <DependentUpon>202206050305418_ContainerRentTest5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206050309133_basketItemName.cs" />
-    <Compile Include="Migrations\202206050309133_basketItemName.designer.cs">
-      <DependentUpon>202206050309133_basketItemName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206050314382_basketItemName1.cs" />
-    <Compile Include="Migrations\202206050314382_basketItemName1.designer.cs">
-      <DependentUpon>202206050314382_basketItemName1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206050319567_basketItemName2.cs" />
-    <Compile Include="Migrations\202206050319567_basketItemName2.designer.cs">
-      <DependentUpon>202206050319567_basketItemName2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206050323290_basketItemName3.cs" />
-    <Compile Include="Migrations\202206050323290_basketItemName3.designer.cs">
-      <DependentUpon>202206050323290_basketItemName3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206050326463_basketItemNameFromTheTop.cs" />
-    <Compile Include="Migrations\202206050326463_basketItemNameFromTheTop.designer.cs">
-      <DependentUpon>202206050326463_basketItemNameFromTheTop.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206050334405_basketItemNameFromTheTopPart2.cs" />
-    <Compile Include="Migrations\202206050334405_basketItemNameFromTheTopPart2.designer.cs">
-      <DependentUpon>202206050334405_basketItemNameFromTheTopPart2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206050343250_basketItemNameFromTheTopPart3.cs" />
-    <Compile Include="Migrations\202206050343250_basketItemNameFromTheTopPart3.designer.cs">
-      <DependentUpon>202206050343250_basketItemNameFromTheTopPart3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206050355525_AddedEmployeeAndDriver.cs" />
-    <Compile Include="Migrations\202206050355525_AddedEmployeeAndDriver.designer.cs">
-      <DependentUpon>202206050355525_AddedEmployeeAndDriver.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206051038545_EmployeeController.cs" />
-    <Compile Include="Migrations\202206051038545_EmployeeController.designer.cs">
-      <DependentUpon>202206051038545_EmployeeController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206051221180_Employee_added.cs" />
-    <Compile Include="Migrations\202206051221180_Employee_added.designer.cs">
-      <DependentUpon>202206051221180_Employee_added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206051235528_AddCustomer.cs" />
-    <Compile Include="Migrations\202206051235528_AddCustomer.designer.cs">
-      <DependentUpon>202206051235528_AddCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206051311257_AddedOrders.cs" />
-    <Compile Include="Migrations\202206051311257_AddedOrders.designer.cs">
-      <DependentUpon>202206051311257_AddedOrders.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206051339125_AddedOrdersCheckOut.cs" />
-    <Compile Include="Migrations\202206051339125_AddedOrdersCheckOut.designer.cs">
-      <DependentUpon>202206051339125_AddedOrdersCheckOut.cs</DependentUpon>
+    <Compile Include="Migrations\202206051846072_OrdersAlter.cs" />
+    <Compile Include="Migrations\202206051846072_OrdersAlter.designer.cs">
+      <DependentUpon>202206051846072_OrdersAlter.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -147,65 +71,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202206050131585_test1.resx">
-      <DependentUpon>202206050131585_test1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206050141347_test2.resx">
-      <DependentUpon>202206050141347_test2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206050145393_ContainerRentTest1.resx">
-      <DependentUpon>202206050145393_ContainerRentTest1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206050250295_ContainerRentTest2.resx">
-      <DependentUpon>202206050250295_ContainerRentTest2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206050254276_ContainerRentTest3.resx">
-      <DependentUpon>202206050254276_ContainerRentTest3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206050256019_ContainerRentTest4.resx">
-      <DependentUpon>202206050256019_ContainerRentTest4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206050305418_ContainerRentTest5.resx">
-      <DependentUpon>202206050305418_ContainerRentTest5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206050309133_basketItemName.resx">
-      <DependentUpon>202206050309133_basketItemName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206050314382_basketItemName1.resx">
-      <DependentUpon>202206050314382_basketItemName1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206050319567_basketItemName2.resx">
-      <DependentUpon>202206050319567_basketItemName2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206050323290_basketItemName3.resx">
-      <DependentUpon>202206050323290_basketItemName3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206050326463_basketItemNameFromTheTop.resx">
-      <DependentUpon>202206050326463_basketItemNameFromTheTop.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206050334405_basketItemNameFromTheTopPart2.resx">
-      <DependentUpon>202206050334405_basketItemNameFromTheTopPart2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206050343250_basketItemNameFromTheTopPart3.resx">
-      <DependentUpon>202206050343250_basketItemNameFromTheTopPart3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206050355525_AddedEmployeeAndDriver.resx">
-      <DependentUpon>202206050355525_AddedEmployeeAndDriver.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206051038545_EmployeeController.resx">
-      <DependentUpon>202206051038545_EmployeeController.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206051221180_Employee_added.resx">
-      <DependentUpon>202206051221180_Employee_added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206051235528_AddCustomer.resx">
-      <DependentUpon>202206051235528_AddCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206051311257_AddedOrders.resx">
-      <DependentUpon>202206051311257_AddedOrders.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206051339125_AddedOrdersCheckOut.resx">
-      <DependentUpon>202206051339125_AddedOrdersCheckOut.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202206051846072_OrdersAlter.resx">
+      <DependentUpon>202206051846072_OrdersAlter.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -35,7 +35,7 @@ namespace ShelbyChester.WebUI.Controllers
 
             return View();
         }
-
+        [Authorize]
         public ActionResult ContainerRentList()
         {
             List<ContainerCategory> containerCategories = containerRepo.Collection().ToList();

@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class basketItemNameFromTheTopPart3 : DbMigration
+    public partial class OrdersAlter : DbMigration
     {
         public override void Up()
         {
