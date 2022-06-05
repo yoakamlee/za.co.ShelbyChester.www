@@ -1,0 +1,24 @@
+﻿@{ 
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/_LayoutPageWithTheme.cshtml";
+}
+
+<h3>Admin page</h3>
+
+<div class="col-md-5">
+    <h4>Container Management</h4>
+    <div class="list-group">
+        @Html.ActionLink("Container Category", "Index", "ContainerCategoryManager"
+       , null, new { @class = "list" })
+        @Html.ActionLink("Container Category", "Index", "ContainerCategoryManager"
+       , null, new { @class = "list" })
+    </div>
+</div>
+
+<div class="col-md-5">
+    <h4>Container Management</h4>
+    <div class="list-group">
+        @Html.ActionLink("Orders", "Index", "OrderManager"
+       , null, new { @class = "list" })
+    </div>
+</div>
