@@ -1,6 +1,7 @@
 ﻿using ShelbyChester.Core.Contracts;
 using ShelbyChester.Core.Models;
 using ShelbyChester.Core.ViewModels;
+using ShelbyChester.DataAccess.SQL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,14 +12,19 @@ namespace ShelbyChester.WebUI.Controllers
 {
     public class ContainerRentManagerController : Controller
     {
+        DataContext db = new DataContext();
+
         IRepo<ContainerRent> rentContext;
         IRepo<ContainerCategory> containerRepo;
+        IRepo<BasketItem> basketItems;
 
         public ContainerRentManagerController(IRepo<ContainerRent> RentContext,
-                                              IRepo<ContainerCategory> ContainerRepo)
+                                              IRepo<ContainerCategory> ContainerRepo,
+                                              IRepo<BasketItem> BasketItems)
         {
             rentContext = RentContext;
             containerRepo = ContainerRepo;
+            basketItems = BasketItems;
         }
 
         // GET: ContainerRentManager
@@ -27,6 +33,7 @@ namespace ShelbyChester.WebUI.Controllers
             List<ContainerRent> containerRents = rentContext.Collection().ToList();
             return View(containerRents);
         }
+
 
         public ActionResult Create()
         {
