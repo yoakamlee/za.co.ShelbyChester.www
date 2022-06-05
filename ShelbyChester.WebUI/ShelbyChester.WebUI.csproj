@@ -364,6 +364,7 @@
     <Content Include="Views\Basket\BasketSummary.cshtml" />
     <Content Include="Views\ContainerRentManager\Index.cshtml" />
     <Content Include="Views\ContainerRentManager\Create.cshtml" />
+    <Content Include="Views\ContainerRentManager\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

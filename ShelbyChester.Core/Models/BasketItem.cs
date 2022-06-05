@@ -11,5 +11,6 @@ namespace ShelbyChester.Core.Models
         public string BasketId { get; set; }
         public string ContainerCategoryId { get; set; }
         public int Quantity { get; set; }
+        public string ContainerName { get; set; }
     }
 }

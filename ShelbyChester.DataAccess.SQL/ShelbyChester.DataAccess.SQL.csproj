@@ -76,6 +76,38 @@
     <Compile Include="Migrations\202206050256019_ContainerRentTest4.designer.cs">
       <DependentUpon>202206050256019_ContainerRentTest4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206050305418_ContainerRentTest5.cs" />
+    <Compile Include="Migrations\202206050305418_ContainerRentTest5.designer.cs">
+      <DependentUpon>202206050305418_ContainerRentTest5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206050309133_basketItemName.cs" />
+    <Compile Include="Migrations\202206050309133_basketItemName.designer.cs">
+      <DependentUpon>202206050309133_basketItemName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206050314382_basketItemName1.cs" />
+    <Compile Include="Migrations\202206050314382_basketItemName1.designer.cs">
+      <DependentUpon>202206050314382_basketItemName1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206050319567_basketItemName2.cs" />
+    <Compile Include="Migrations\202206050319567_basketItemName2.designer.cs">
+      <DependentUpon>202206050319567_basketItemName2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206050323290_basketItemName3.cs" />
+    <Compile Include="Migrations\202206050323290_basketItemName3.designer.cs">
+      <DependentUpon>202206050323290_basketItemName3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206050326463_basketItemNameFromTheTop.cs" />
+    <Compile Include="Migrations\202206050326463_basketItemNameFromTheTop.designer.cs">
+      <DependentUpon>202206050326463_basketItemNameFromTheTop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206050334405_basketItemNameFromTheTopPart2.cs" />
+    <Compile Include="Migrations\202206050334405_basketItemNameFromTheTopPart2.designer.cs">
+      <DependentUpon>202206050334405_basketItemNameFromTheTopPart2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206050343250_basketItemNameFromTheTopPart3.cs" />
+    <Compile Include="Migrations\202206050343250_basketItemNameFromTheTopPart3.designer.cs">
+      <DependentUpon>202206050343250_basketItemNameFromTheTopPart3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLRepo.cs" />
@@ -108,6 +140,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206050256019_ContainerRentTest4.resx">
       <DependentUpon>202206050256019_ContainerRentTest4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206050305418_ContainerRentTest5.resx">
+      <DependentUpon>202206050305418_ContainerRentTest5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206050309133_basketItemName.resx">
+      <DependentUpon>202206050309133_basketItemName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206050314382_basketItemName1.resx">
+      <DependentUpon>202206050314382_basketItemName1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206050319567_basketItemName2.resx">
+      <DependentUpon>202206050319567_basketItemName2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206050323290_basketItemName3.resx">
+      <DependentUpon>202206050323290_basketItemName3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206050326463_basketItemNameFromTheTop.resx">
+      <DependentUpon>202206050326463_basketItemNameFromTheTop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206050334405_basketItemNameFromTheTopPart2.resx">
+      <DependentUpon>202206050334405_basketItemNameFromTheTopPart2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206050343250_basketItemNameFromTheTopPart3.resx">
+      <DependentUpon>202206050343250_basketItemNameFromTheTopPart3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

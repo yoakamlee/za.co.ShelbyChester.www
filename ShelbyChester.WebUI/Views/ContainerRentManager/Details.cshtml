@@ -1,0 +1,100 @@
+﻿@model ShelbyChester.Core.Models.ContainerRent
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPageWithTheme.cshtml";
+}
+@*Add this after (div class="w3l-middle py-5" style="text-align: center) to change background image
+    ; background: url(../../assets/images/ContainerType.jpeg) center; "*@
+<div class="w3l-middle py-5" style="text-align: center; background: url(../../assets/images/ContainerType.jpeg) center; ">
+    <div class="container py-xl-5 py-lg-3">
+        <div class="welcome-left py-md-5 py-3">
+            <h6></h6>
+            <h4>Container Rental</h4>
+            <p class="pr-lg-5">
+                Easy as one, two, three
+            </p>
+            <div class="buttons mt-5">
+                <a></a>
+                <a></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2>Details</h2>
+
+<div>
+    <h4>ContainerRent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedAt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliverTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliverTo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeightOfItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeightOfItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContainerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContainerName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
