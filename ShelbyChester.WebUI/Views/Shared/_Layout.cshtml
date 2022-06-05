@@ -45,7 +45,8 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    @RenderSection("styles", required: false)
     @RenderSection("scripts", required: false)
 </body>
 </html>

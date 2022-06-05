@@ -12,11 +12,14 @@ namespace ShelbyChester.WebUI.Controllers
     {
         IBasketService basketService;
         IOrderService orderService;
+        IRepo<Customer> customers;
 
-        public BasketController(IBasketService BasketService, IOrderService OrderService)
+        public BasketController(IBasketService BasketService, IOrderService OrderService,
+            IRepo<Customer> Customers)
         {
             this.basketService = BasketService;
             this.orderService = OrderService;
+            this.customers = Customers;
         }
         // GET: Basket
         public ActionResult Index()
@@ -46,16 +49,36 @@ namespace ShelbyChester.WebUI.Controllers
             return PartialView(basketSummary);
         }
 
+        [Authorize]
         public ActionResult CheckOut()
         {
-            return View();
+            Customer customer = customers.Collection().FirstOrDefault(c => c.Email == User.Identity.Name);
+            if (customer != null)
+            {
+                Order order = new Order()
+                {
+                    Email = customer.Email,
+                    City = customer.City,
+                    Address = customer.Address,
+                    FirstName = customer.FirstName,
+                    LastName = customer.LastName,
+                    postalCode = customer.postalCode,
+                };
+                return View(order);
+            }
+            else
+            {
+                return RedirectToAction("Error");
+            }
         }
 
         [HttpPost]
-        public ActionResult Checkout(Order order)
+        [Authorize]
+        public ActionResult CheckOut(Order order)
         {
             var basketItems = basketService.GetBasketItems(this.HttpContext);
             order.OrderStatus = "Order Created";
+            order.Email = User.Identity.Name;
 
             //Process Payment
 
