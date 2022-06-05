@@ -9,6 +9,7 @@ namespace ShelbyChester.Core.Models
 {
     public class ContainerRent : BaseEntity
     {
+        public string Employee_Id { get; set; }
         public string Location { get; set; }
         public string DeliverTo { get; set; }
         public string ItemName { get; set; }

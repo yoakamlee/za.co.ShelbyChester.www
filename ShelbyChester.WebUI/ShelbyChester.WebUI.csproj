@@ -194,6 +194,7 @@
     <Compile Include="Controllers\ClientPreAdviceManagerController.cs" />
     <Compile Include="Controllers\ContainerCategoryManagerController.cs" />
     <Compile Include="Controllers\ContainerRentManagerController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\FreightQuotationManagerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -365,10 +366,14 @@
     <Content Include="Views\ContainerRentManager\Index.cshtml" />
     <Content Include="Views\ContainerRentManager\Create.cshtml" />
     <Content Include="Views\ContainerRentManager\Details.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Employee\Create.cshtml" />
+    <Content Include="Views\Employee\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\ContainerType\" />
+    <Folder Include="Content\EmployeeImage\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

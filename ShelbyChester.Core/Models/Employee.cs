@@ -28,9 +28,14 @@ namespace ShelbyChester.Core.Models
         public string Project { get; set; }
         [Display(Name = "Company Name")]
         public string CompanyName { get; set; }
-        [Display(Name = "Pin Code")]
-        public int PinCode { get; set; }
+        //[Display(Name = "Pin Code")]
+        //public int PinCode { get; set; }
         [Display(Name = "Dept Name")]
         public int DepartmentId { get; set; }
+
+        [Display(Name = ("Employee image"))]
+        public string Image { get; set; }
+
+        public ContainerRent ContainerRent { get; set; }
     }
 }
