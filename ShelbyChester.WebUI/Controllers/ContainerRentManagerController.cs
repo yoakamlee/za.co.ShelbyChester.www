@@ -16,15 +16,12 @@ namespace ShelbyChester.WebUI.Controllers
 
         IRepo<ContainerRent> rentContext;
         IRepo<ContainerCategory> containerRepo;
-        IRepo<BasketItem> basketItems;
 
         public ContainerRentManagerController(IRepo<ContainerRent> RentContext,
-                                              IRepo<ContainerCategory> ContainerRepo,
-                                              IRepo<BasketItem> BasketItems)
+                                              IRepo<ContainerCategory> ContainerRepo)
         {
             rentContext = RentContext;
             containerRepo = ContainerRepo;
-            basketItems = BasketItems;
         }
 
         // GET: ContainerRentManager

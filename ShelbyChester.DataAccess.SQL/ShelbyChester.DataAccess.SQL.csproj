@@ -68,6 +68,14 @@
     <Compile Include="Migrations\202206050250295_ContainerRentTest2.designer.cs">
       <DependentUpon>202206050250295_ContainerRentTest2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206050254276_ContainerRentTest3.cs" />
+    <Compile Include="Migrations\202206050254276_ContainerRentTest3.designer.cs">
+      <DependentUpon>202206050254276_ContainerRentTest3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206050256019_ContainerRentTest4.cs" />
+    <Compile Include="Migrations\202206050256019_ContainerRentTest4.designer.cs">
+      <DependentUpon>202206050256019_ContainerRentTest4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLRepo.cs" />
@@ -94,6 +102,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206050250295_ContainerRentTest2.resx">
       <DependentUpon>202206050250295_ContainerRentTest2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206050254276_ContainerRentTest3.resx">
+      <DependentUpon>202206050254276_ContainerRentTest3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206050256019_ContainerRentTest4.resx">
+      <DependentUpon>202206050256019_ContainerRentTest4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
