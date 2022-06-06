@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class OrdersAlter : DbMigration
+    public partial class DriverNewIni : DbMigration
     {
         public override void Up()
         {

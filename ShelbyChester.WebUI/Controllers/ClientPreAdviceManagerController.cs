@@ -116,6 +116,7 @@ namespace ShelbyChester.WebUI.Controllers
                 return View(clientAdviceToDelete);
             }
         }
+
         [HttpPost]
         [ActionName("Delete")]
         public ActionResult ConfirmDelete(string Id)

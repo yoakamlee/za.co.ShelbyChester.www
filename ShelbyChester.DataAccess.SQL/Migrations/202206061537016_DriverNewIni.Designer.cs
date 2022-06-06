@@ -7,13 +7,13 @@ namespace ShelbyChester.DataAccess.SQL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class betterCheckOut : IMigrationMetadata
+    public sealed partial class DriverNewIni : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(betterCheckOut));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(DriverNewIni));
         
         string IMigrationMetadata.Id
         {
-            get { return "202206060722461_betterCheckOut"; }
+            get { return "202206061537016_DriverNewIni"; }
         }
         
         string IMigrationMetadata.Source

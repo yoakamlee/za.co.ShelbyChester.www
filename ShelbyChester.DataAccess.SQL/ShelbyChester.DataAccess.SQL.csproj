@@ -52,25 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
-    <Compile Include="Migrations\202206051846072_OrdersAlter.cs" />
-    <Compile Include="Migrations\202206051846072_OrdersAlter.designer.cs">
-      <DependentUpon>202206051846072_OrdersAlter.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206052135433_EmployeeRole.cs" />
-    <Compile Include="Migrations\202206052135433_EmployeeRole.designer.cs">
-      <DependentUpon>202206052135433_EmployeeRole.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206060722461_betterCheckOut.cs" />
-    <Compile Include="Migrations\202206060722461_betterCheckOut.designer.cs">
-      <DependentUpon>202206060722461_betterCheckOut.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206061521095_DriverIni.cs" />
-    <Compile Include="Migrations\202206061521095_DriverIni.designer.cs">
-      <DependentUpon>202206061521095_DriverIni.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206061530385_DriverAddedProp.cs" />
-    <Compile Include="Migrations\202206061530385_DriverAddedProp.designer.cs">
-      <DependentUpon>202206061530385_DriverAddedProp.cs</DependentUpon>
+    <Compile Include="Migrations\202206061537016_DriverNewIni.cs" />
+    <Compile Include="Migrations\202206061537016_DriverNewIni.designer.cs">
+      <DependentUpon>202206061537016_DriverNewIni.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,20 +71,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202206051846072_OrdersAlter.resx">
-      <DependentUpon>202206051846072_OrdersAlter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206052135433_EmployeeRole.resx">
-      <DependentUpon>202206052135433_EmployeeRole.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206060722461_betterCheckOut.resx">
-      <DependentUpon>202206060722461_betterCheckOut.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206061521095_DriverIni.resx">
-      <DependentUpon>202206061521095_DriverIni.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206061530385_DriverAddedProp.resx">
-      <DependentUpon>202206061530385_DriverAddedProp.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202206061537016_DriverNewIni.resx">
+      <DependentUpon>202206061537016_DriverNewIni.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

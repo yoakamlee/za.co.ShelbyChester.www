@@ -76,6 +76,14 @@
                                 </li>
                             }
 
+                            @if (Request.IsAuthenticated && User.IsInRole("Driver"))
+                            {
+                                <li class="nav-item">
+
+                                    <a class="nav-link" @Html.ActionLink("Driver", "Driver", "OrderManager")
+                                </li>
+                            }
+
                             <li class="nav-item">
                                 <a class="nav-link" href="/Home/Contact">Contact</a>
                             </li>
