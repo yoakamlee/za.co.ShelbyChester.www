@@ -4,13 +4,26 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutPageWithTheme.cshtml";
 }
+<div class="w3l-middle py-5" style="text-align:left">
+    <div class="container py-xl-5 py-lg-3">
+        <div class="welcome-left py-md-5 py-3">
+            <h6></h6>
+            <h4>Basket</h4>
+            <p class="pr-lg-5">
+                Check out, and confirm your order!
+            </p>
+            <div class="buttons mt-5">
+                <a></a>
+                <a></a>
+            </div>
+        </div>
+    </div>
+</div>
 
-<h2>Basket</h2>
-
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+</p>*@
+<table class="table" style="padding-top: 25px; padding-left: 30px; padding-right: 30px; padding-bottom:50px">
     <tr>
         <th></th>
         <th>
@@ -31,7 +44,7 @@
     </tr>
 
 @foreach (var item in Model) {
-<tr>
+<tr style="padding-top: 25px; padding-left: 30px; padding-right: 30px; padding-bottom:50px">
     <td>
         <img class="img" src="~/Content/ContainerType/@item.Image"
     </td>

@@ -160,7 +160,7 @@ namespace ShelbyChester.WebUI.Controllers
         
 
         [HttpPost]
-        [Authorize(Roles = "Employee")]
+        [Authorize(Roles = "Driver")]
         public ActionResult DriverUpdate(Order updateOrder, string Id)
         {
             Order order = orderService.GetOrder(Id);
@@ -168,7 +168,7 @@ namespace ShelbyChester.WebUI.Controllers
             order.OrderStatus = updateOrder.OrderStatus;
             orderService.UpdateOrder(order);
 
-            return RedirectToAction("Employee");
+            return RedirectToAction("Driver");
         }
 
         //Driver View Edit //Edit !!TO DO!!
@@ -270,6 +270,7 @@ namespace ShelbyChester.WebUI.Controllers
             {
             ViewBag.EmpList = emps;
             }
+
             //DriverList
             List<string> drivers = new List<string>();
             using (SqlConnection connection = new SqlConnection(@"Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=ShelbyChester;Integrated Security=True"))

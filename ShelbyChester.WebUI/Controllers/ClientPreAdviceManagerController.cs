@@ -7,6 +7,7 @@ using ShelbyChester.Core.Contracts;
 using ShelbyChester.Core.Models;
 using ShelbyChester.Core.ViewModels;
 using ShelbyChester.DataAccess.InMemory;
+using ShelbyChester.WebUI.Models;
 
 namespace ShelbyChester.WebUI.Controllers
 {
@@ -14,6 +15,7 @@ namespace ShelbyChester.WebUI.Controllers
     {
         IRepo<ClientPreAdvice> context;
         IRepo<ContainerCategory> containerRepo;
+        ApplicationDbContext db = new ApplicationDbContext();
 
         public ClientPreAdviceManagerController(IRepo<ClientPreAdvice> clientPreAdviceContext,
                                                 IRepo<ContainerCategory> containerCategoryContext)
@@ -28,6 +30,15 @@ namespace ShelbyChester.WebUI.Controllers
             return View(clientPreAdvices);
         }
 
+
+        //User List View //
+
+        public ActionResult UserIndex()
+        {
+            List<ClientPreAdvice> clientPreAdvices = context.Collection().ToList();
+            return View(clientPreAdvices);
+        }
+        //
         public ActionResult Create()
         {
             ContainerCategoryViewModel viewModel = new ContainerCategoryViewModel();
@@ -36,6 +47,7 @@ namespace ShelbyChester.WebUI.Controllers
             viewModel.ContainerCategories = containerRepo.Collection();
             return View(viewModel);
         }
+
         [HttpPost]
         public ActionResult Create(ClientPreAdvice clientPreAdvice)
         {
@@ -48,7 +60,7 @@ namespace ShelbyChester.WebUI.Controllers
                 context.Insert(clientPreAdvice);
                 context.Commit();
 
-                return RedirectToAction("Index");
+                return RedirectToAction("UserIndex");
             }
         }
 

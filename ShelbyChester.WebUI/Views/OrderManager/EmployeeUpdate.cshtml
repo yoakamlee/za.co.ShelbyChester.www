@@ -4,14 +4,27 @@
     ViewBag.Title = "EmployeeUpdate";
     Layout = "~/Views/Shared/_LayoutPageWithTheme.cshtml";
 }
-
-<h2>EmployeeUpdate</h2>
+<div class="w3l-middle py-5" style="text-align:left">
+    <div class="container py-xl-5 py-lg-3">
+        <div class="welcome-left py-md-5 py-3">
+            <h6></h6>
+            <h4>Employee Update</h4>
+            <p class="pr-lg-5">
+                Update Task
+            </p>
+            <div class="buttons mt-5">
+                <a></a>
+                <a></a>
+            </div>
+        </div>
+    </div>
+</div>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
+    <div class="form-horizontal" style="padding-top: 25px; padding-left: 30px; padding-right: 30px; padding-bottom:50px">
         <h4>Order</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -57,7 +70,7 @@
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6" style="padding-top: 25px; padding-left: 30px; padding-right: 30px; padding-bottom:50px">
         <div class="form-group">
             @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">

@@ -382,6 +382,7 @@
     <Content Include="Views\OrderManager\EmployeeUpdate.cshtml" />
     <Content Include="Views\OrderManager\Driver.cshtml" />
     <Content Include="Views\OrderManager\DriverUpdate.cshtml" />
+    <Content Include="Views\ClientPreAdviceManager\UserIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

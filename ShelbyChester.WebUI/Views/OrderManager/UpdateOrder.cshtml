@@ -4,14 +4,27 @@
     ViewBag.Title = "UpdateOrder";
     Layout = "~/Views/Shared/_LayoutPageWithTheme.cshtml";
 }
-
-<h2>UpdateOrder</h2>
+<div class="w3l-middle py-5" style="text-align:left">
+    <div class="container py-xl-5 py-lg-3">
+        <div class="welcome-left py-md-5 py-3">
+            <h6></h6>
+            <h4>Update Order</h4>
+            <p class="pr-lg-5">
+                Rent your very own container now!
+            </p>
+            <div class="buttons mt-5">
+                <a></a>
+                <a></a>
+            </div>
+        </div>
+    </div>
+</div>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
-<div class="form-horizontal">
+<div class="form-horizontal" style="padding-top: 25px; padding-left: 30px; padding-right: 30px; padding-bottom:50px">
     <h4>Order</h4>
     <hr />
 

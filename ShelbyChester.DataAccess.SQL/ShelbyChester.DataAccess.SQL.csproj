@@ -56,6 +56,10 @@
     <Compile Include="Migrations\202206061537016_DriverNewIni.designer.cs">
       <DependentUpon>202206061537016_DriverNewIni.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206062317295_viewTest.cs" />
+    <Compile Include="Migrations\202206062317295_viewTest.designer.cs">
+      <DependentUpon>202206062317295_viewTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLRepo.cs" />
@@ -73,6 +77,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202206061537016_DriverNewIni.resx">
       <DependentUpon>202206061537016_DriverNewIni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206062317295_viewTest.resx">
+      <DependentUpon>202206062317295_viewTest.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

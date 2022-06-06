@@ -54,10 +54,11 @@
 
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active">
+                            <li class="nav-item">
                                 <a class="nav-link" @Html.ActionLink("Home", "Index", "Home")</a>
                             </li>
-                            <li class="nav-item active">
+
+                            <li class="nav-item">
                                 <a class="nav-link" @Html.ActionLink("Rent here", "ContainerRentList", "Home")</a>
                             </li>
 
@@ -91,12 +92,16 @@
                                 <a class="nav-link free-con" @Html.ActionLink("Need some Advice?", "Create", "ClientPreAdviceManager")</a>
                             </li>
                         </ul>
-                           @Html.Partial("_LoginPartial")
-                           @{ Html.RenderAction("BasketSummary", "Basket"); }
+                        <div style="padding-left:5px">
+                                  @Html.Partial("_LoginPartial")
+                        </div>
+                           @{ 
+                               Html.RenderAction("BasketSummary", "Basket"); 
+                            }
                     </div>
                     <!-- toggle switch for light and dark theme -->
                     <div class="mobile-position">
-                        <nav class="navigation">
+                        @*<nav class="navigation">
                             <div class="theme-switch-wrapper">
                                 <label class="theme-switch" for="checkbox">
                                     <input type="checkbox" id="checkbox">
@@ -106,7 +111,7 @@
                                     </div>
                                 </label>
                             </div>
-                        </nav>
+                        </nav>*@
                     </div>
                     <!-- //toggle switch for light and dark theme -->
                 </nav>

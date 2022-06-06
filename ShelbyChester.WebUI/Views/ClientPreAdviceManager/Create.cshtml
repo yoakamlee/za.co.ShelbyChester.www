@@ -6,7 +6,9 @@
 }
 @*Add this after (div class="w3l-middle py-5" style="text-align: center) to change background image
     ; background: url(../../assets/images/ContainerType.jpeg) center; "*@
-<div class="w3l-middle py-5" style="text-align: center; background: url(../../assets/images/ContainerType.jpeg) center; ">
+
+
+<div class="w3l-middle py-5">
     <div class="container py-xl-5 py-lg-3">
         <div class="welcome-left py-md-5 py-3">
             <h6></h6>
@@ -104,10 +106,10 @@
                 @Html.ValidationMessageFor(model => model.ClientPreAdvice.Client_Description, "", new { @class = "text-danger" })
             </div>
         </div>
-        <div class="col-md-10">
+        @*<div class="col-md-10">
             @Html.LabelFor(model => model.ClientPreAdvice.Country, htmlAttributes: new { @class = "control-label col-md-2" })
             @Html.EnumDropDownListFor(model => model.ClientPreAdvice.Country)
-        </div>
+        </div>*@
         <div class="col-md-10">
             @Html.LabelFor(model => model.ClientPreAdvice.ContainerType, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -128,10 +130,19 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+@if (Request.IsAuthenticated && User.IsInRole("Admin"))
+{
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
 
+@if (Request.IsAuthenticated && User.IsInRole("")) 
+{ 
+    <div>
+        @Html.ActionLink("Back to List", "UserIndex")
+    </div>
+}
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
