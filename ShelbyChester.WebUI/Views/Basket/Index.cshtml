@@ -59,6 +59,6 @@
             <strong>Basket Total</strong>
         </td>
         <td>@String.Format("{0:c}", (from c in Model select c.ContainerPrice * c.Quantity).Sum())</td>
-        <td><a href="@Url.Action("Checkout","Basket")" class="btn btn" style="color:greenyellow">Check Out</a></td>
+        <td><a href="@Url.Action("Checkout","Basket")" class="btn btn" style="color:white; background-color:greenyellow">Check Out</a></td>
     </tr>
 </table>
