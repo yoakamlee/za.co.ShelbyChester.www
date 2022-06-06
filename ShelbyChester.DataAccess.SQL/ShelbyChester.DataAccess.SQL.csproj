@@ -64,6 +64,10 @@
     <Compile Include="Migrations\202206060722461_betterCheckOut.designer.cs">
       <DependentUpon>202206060722461_betterCheckOut.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206061521095_DriverIni.cs" />
+    <Compile Include="Migrations\202206061521095_DriverIni.designer.cs">
+      <DependentUpon>202206061521095_DriverIni.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLRepo.cs" />
@@ -87,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206060722461_betterCheckOut.resx">
       <DependentUpon>202206060722461_betterCheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206061521095_DriverIni.resx">
+      <DependentUpon>202206061521095_DriverIni.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
