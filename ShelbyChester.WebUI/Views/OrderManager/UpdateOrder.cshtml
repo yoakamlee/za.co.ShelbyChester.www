@@ -30,7 +30,7 @@
     <div class="form-group">
         @Html.Label("Employee Assigned")
         <div class="col-md-10">
-            @Html.DropDownList("Employees" , new SelectList(ViewBag.EmpList, "Id", "Email"), new { @class = "form-control" })
+            @Html.DropDownListFor(model => model.EmployeeId, new SelectList(ViewBag.EmpList, "Id", "Email"), new { @class = "form-control" })
             @*@Html.ValidationMessageFor(model => model.OrderStatus, "", new { @class = "text-danger" })*@
         </div>
     </div>

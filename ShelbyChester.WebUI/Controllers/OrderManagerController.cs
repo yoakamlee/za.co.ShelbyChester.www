@@ -31,7 +31,34 @@ namespace ShelbyChester.WebUI.Controllers
             List<Order> orders = orderService.GetOrderList();
             return View(orders);
         }
-        
+
+        //Employee View
+        [Authorize(Roles = "Employee")]
+        public ActionResult Employee()
+        {
+            string empID = "";
+            using (SqlConnection connection = new SqlConnection(@"Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=ShelbyChester;Integrated Security=True"))
+            {
+                connection.Open();
+                string query = @"SELECT TOP 1 Id
+	                               FROM AspNetUsers
+	                               WHERE Email = '"+ Session["CurrentUserEmail"]+"'";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            empID = reader.GetString(0);
+                        }
+                    }
+                }
+            }
+
+            List<Order> orders = orderService.GetOrderList().Where(x => x.EmployeeId == empID).ToList();
+  
+            return View(orders);
+        }
 
         [Authorize(Roles = "Admin")]
         public ActionResult UpdateOrder(string Id)
@@ -90,6 +117,7 @@ namespace ShelbyChester.WebUI.Controllers
             Order order = orderService.GetOrder(Id);
 
             order.OrderStatus = updateOrder.OrderStatus;
+            order.EmployeeId = updateOrder.EmployeeId;
             orderService.UpdateOrder(order);
 
             return RedirectToAction("Index");
