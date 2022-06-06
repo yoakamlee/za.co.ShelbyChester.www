@@ -26,6 +26,7 @@ namespace ShelbyChester.Core.Models
         public int WeightOfItem { get; set; }
         public string OrderStatus { get; set; }
         public string EmployeeId { get; set; }
+        public string DriverId { get; set; }
         public virtual ICollection<OrderItem> OrderItems { get; set; }
     }
 }

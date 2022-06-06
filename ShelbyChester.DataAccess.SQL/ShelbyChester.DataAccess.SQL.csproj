@@ -68,6 +68,10 @@
     <Compile Include="Migrations\202206061521095_DriverIni.designer.cs">
       <DependentUpon>202206061521095_DriverIni.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206061530385_DriverAddedProp.cs" />
+    <Compile Include="Migrations\202206061530385_DriverAddedProp.designer.cs">
+      <DependentUpon>202206061530385_DriverAddedProp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLRepo.cs" />
@@ -94,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206061521095_DriverIni.resx">
       <DependentUpon>202206061521095_DriverIni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206061530385_DriverAddedProp.resx">
+      <DependentUpon>202206061530385_DriverAddedProp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
