@@ -27,7 +27,7 @@ namespace ShelbyChester.Services
                     Image = item.Image,
                     Price = item.ContainerPrice,
                     ContainerName = item.ContainerName,
-                    Quaintity = item.Quantity
+                    Quaintity = item.Quantity,
                 });
             }
 
@@ -49,5 +49,6 @@ namespace ShelbyChester.Services
             orderContext.Update(updatedOrder);
             orderContext.Commit();
         }
+
     }
 }
