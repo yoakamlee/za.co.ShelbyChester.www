@@ -39,9 +39,9 @@
         <th>
             @Html.DisplayNameFor(model => model.ItemName)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.ItemDescription)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.NumberOfItem)
         </th>
@@ -102,9 +102,9 @@
             @Html.DisplayFor(modelItem => item.EmployeeId)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "EmployeeUpdate", new { id=item.Id }) |
+            @*@Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
         </td>
     </tr>
 }

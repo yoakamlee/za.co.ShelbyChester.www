@@ -32,7 +32,7 @@ namespace ShelbyChester.WebUI.Controllers
             return View(orders);
         }
 
-        //Employee View
+        //Employee View //Index
         [Authorize(Roles = "Employee")]
         public ActionResult Employee()
         {
@@ -60,6 +60,70 @@ namespace ShelbyChester.WebUI.Controllers
             return View(orders);
         }
 
+        //Employee Manager //Edit
+        public ActionResult EmployeeUpdate(string Id)
+        {
+            ViewBag.StatusList = new List<string>()
+            {
+                "Order Created",
+                "Order Processed",
+                "Order Packed",
+                "Order On Route",
+                "Order Shipped",
+                "Order Complete",
+            };
+            
+            List<string> employees = new List<string>();
+            using (SqlConnection connection = new SqlConnection(@"Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=ShelbyChester;Integrated Security=True"))
+            {
+                connection.Open();
+                string query = @"SELECT UR.UserId
+	                               FROM AspNetRoles r , AspNetUserRoles ur
+	                               WHERE R.Id = UR.RoleId
+	                               AND R.Name = 'Employee'";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            employees.Add(reader.GetString(0));
+                        }
+                    }
+                }
+            }
+
+            List<ApplicationUser> emps = new List<ApplicationUser>();
+            foreach (string empID in employees)
+            {
+                ApplicationUser user = db.Users.Where(x => x.Id == empID).FirstOrDefault();
+                if (user != null)
+                    emps.Add(user);
+            }
+
+            if (employees.Count > 0)
+            {
+                ViewBag.EmpList = emps;
+            }
+
+            Order order = orderService.GetOrder(Id);
+            return View(order);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Employee")]
+        public ActionResult EmployeeUpdate(Order updateOrder, string Id)
+        {
+            Order order = orderService.GetOrder(Id);
+
+            order.OrderStatus = updateOrder.OrderStatus;
+            orderService.UpdateOrder(order);
+
+            return RedirectToAction("Employee");
+        }
+
+
+        //Admin view //Index
         [Authorize(Roles = "Admin")]
         public ActionResult UpdateOrder(string Id)
         {
@@ -67,8 +131,10 @@ namespace ShelbyChester.WebUI.Controllers
             {
                 "Order Created",
                 "Order Processed",
+                "Order Packed",
+                "Order On Route",
                 "Order Shipped",
-                "Order Complete"
+                "Order Complete",
             };
 
             List<string> employees = new List<string>();
@@ -109,7 +175,7 @@ namespace ShelbyChester.WebUI.Controllers
             return View(order);
         }
 
-
+        //Admin Manager // Edit
         [HttpPost]
         [Authorize(Roles = "Admin")]
         public ActionResult UpdateOrder(Order updateOrder, string Id)

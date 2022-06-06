@@ -379,6 +379,7 @@
     <Content Include="Views\OrderManager\OrderItem.cshtml" />
     <Content Include="Views\OrderManager\EmployeeView.cshtml" />
     <Content Include="Views\OrderManager\Employee.cshtml" />
+    <Content Include="Views\OrderManager\EmployeeUpdate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
