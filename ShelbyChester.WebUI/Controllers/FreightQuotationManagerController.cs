@@ -1,6 +1,7 @@
 ﻿using ShelbyChester.Core.Contracts;
 using ShelbyChester.Core.Models;
 using ShelbyChester.DataAccess.InMemory;
+using ShelbyChester.WebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace ShelbyChester.WebUI.Controllers
     {
 
         IRepo<FreightQuotation> context;
+        IRepo<Customer> customers;
+        ApplicationDbContext db = new ApplicationDbContext();
 
         public FreightQuotationManagerController(IRepo<FreightQuotation> freightQuotationContext)
         {
