@@ -51,7 +51,7 @@ namespace ShelbyChester.WebUI
             container.RegisterType<IRepo<ContainerCategory>, SQLRepo<ContainerCategory>>();
             container.RegisterType<IRepo<FreightQuotation>, SQLRepo<FreightQuotation>>();
             container.RegisterType<IRepo<WarehouseStorage>, SQLRepo<WarehouseStorage>>();
-            container.RegisterType<IRepo<Basket>, SQLRepo<Basket>>();
+            container.RegisterType<IRepo<Basketitem>, SQLRepo<Basketitem>>();
             container.RegisterType<IRepo<ContainerRent>, SQLRepo<ContainerRent>>();
             container.RegisterType<IRepo<Customer>, SQLRepo<Customer>>();
             container.RegisterType<IRepo<Employee>, SQLRepo<Employee>>();

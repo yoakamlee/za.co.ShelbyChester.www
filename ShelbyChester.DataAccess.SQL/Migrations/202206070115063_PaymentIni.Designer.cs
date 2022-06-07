@@ -7,13 +7,13 @@ namespace ShelbyChester.DataAccess.SQL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class DriverNewIni : IMigrationMetadata
+    public sealed partial class PaymentIni : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(DriverNewIni));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(PaymentIni));
         
         string IMigrationMetadata.Id
         {
-            get { return "202206061537016_DriverNewIni"; }
+            get { return "202206070115063_PaymentIni"; }
         }
         
         string IMigrationMetadata.Source

@@ -14,21 +14,21 @@ namespace ShelbyChester.Services
     {
 
         IRepo<ContainerCategory> containerCategoryContext;
-        IRepo<Basket> basketContext;
+        IRepo<Basketitem> basketContext;
 
         public const string BasketSessionName = "eCommerceBasket";
 
-        public BasketService(IRepo<ContainerCategory> ContainerCategoryContext, IRepo<Basket> BasketContext)
+        public BasketService(IRepo<ContainerCategory> ContainerCategoryContext, IRepo<Basketitem> BasketContext)
         {
             this.basketContext = BasketContext;
             this.containerCategoryContext = ContainerCategoryContext;
         }
 
-        private Basket GetBasket(HttpContextBase httpContext, bool createIfNull)
+        private Basketitem GetBasket(HttpContextBase httpContext, bool createIfNull)
          {
             HttpCookie cookie = httpContext.Request.Cookies.Get(BasketSessionName);
 
-            Basket basket = new Basket();
+            Basketitem basket = new Basketitem();
 
             if (cookie != null)
             {
@@ -56,9 +56,9 @@ namespace ShelbyChester.Services
             return basket;
         }
 
-        private Basket CreateNewBasket(HttpContextBase httpContext)
+        private Basketitem CreateNewBasket(HttpContextBase httpContext)
         {
-            Basket basket = new Basket();
+            Basketitem basket = new Basketitem();
             basketContext.Insert(basket);
             basketContext.Commit();
 
@@ -72,7 +72,7 @@ namespace ShelbyChester.Services
 
         public void AddToBasket(HttpContextBase httpContext, string containerId)
         {
-            Basket basket = GetBasket(httpContext, true);
+            Basketitem basket = GetBasket(httpContext, true);
 
             BasketItem item = basket.BasketItems.FirstOrDefault(x => x.ContainerCategoryId == containerId);
 
@@ -96,7 +96,7 @@ namespace ShelbyChester.Services
 
         public void RemoveFromBasket(HttpContextBase httpContext, string item_Id)
         {
-            Basket basket = GetBasket(httpContext, true);
+            Basketitem basket = GetBasket(httpContext, true);
             BasketItem item = basket.BasketItems.FirstOrDefault(i => i.Id == item_Id);
 
             if (item != null)
@@ -109,7 +109,7 @@ namespace ShelbyChester.Services
         //Second half here :D
         public List<BasketItemViewModel> GetBasketItems(HttpContextBase httpContext)
         {
-            Basket basket = GetBasket(httpContext, false);
+            Basketitem basket = GetBasket(httpContext, false);
 
             if (basket != null)
             {
@@ -136,7 +136,7 @@ namespace ShelbyChester.Services
 
         public BasketSummaryViewModel GetBasketSummary(HttpContextBase httpContext)
         {
-            Basket basket = GetBasket(httpContext, false);
+            Basketitem basket = GetBasket(httpContext, false);
             BasketSummaryViewModel model = new BasketSummaryViewModel(0,0);
 
             if (basket != null)
@@ -163,9 +163,11 @@ namespace ShelbyChester.Services
 
         public void ClearBasket(HttpContextBase httpContext)
         {
-            Basket basket = GetBasket(httpContext, false);
+            Basketitem basket = GetBasket(httpContext, false);
             basket.BasketItems.Clear();
             basketContext.Commit();
         }
+
+
     }
 }

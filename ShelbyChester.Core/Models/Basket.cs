@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ShelbyChester.Core.Models
 {
-    public class Basket : BaseEntity
+    public class Basketitem : BaseEntity
     {
         public virtual ICollection<BasketItem> BasketItems { get; set; }
         public ICollection<ContainerRent> ContainerRents { get; set; }
 
-        public Basket()
+        public Basketitem()
         {
             this.BasketItems = new List<BasketItem>();
         }
