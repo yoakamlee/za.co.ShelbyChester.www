@@ -70,40 +70,39 @@ namespace ShelbyChester.WebUI.Controllers
                 };
                 return View(order);
             }
-            
-                if (Id == null)
-                {
-                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-                }
-                OrderItem orderItem = new OrderItem();
+            else
+            {
+                return RedirectToAction("Error");
+            }
+            if (Id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            OrderItem orderItem = new OrderItem();
 
-                int Ttotal = Convert.ToInt32(orderItem.Price);
-                //int Vattot = Convert.ToInt32(booking.VatTotal);
-                //ViewBag.TotalForBooking = Ttotal;
-                //ViewBag.Vattotal = Vattot;
+            int Ttotal = Convert.ToInt32(orderItem.Price);
+            //int Vattot = Convert.ToInt32(booking.VatTotal);
+            //ViewBag.TotalForBooking = Ttotal;
+            //ViewBag.Vattotal = Vattot;
 
-                if (orderItem == null)
-                {
-                    return HttpNotFound();
-                }
-                //ViewBag.CateringId = new SelectList(db.Caterings, "Id", "Name", booking.CateringId);
-                //ViewBag.RoomType = new SelectList(db.RoomSizes, "Id", "RoomName", booking.RoomType);
-                return View(orderItem);
-            
-            
+            if (orderItem == null)
+            {
+                return HttpNotFound();
+            }
+            //ViewBag.CateringId = new SelectList(db.Caterings, "Id", "Name", booking.CateringId);
+            //ViewBag.RoomType = new SelectList(db.RoomSizes, "Id", "RoomName", booking.RoomType);
+            return View(orderItem);
         }
 
         [HttpPost]
-        //[Authorize]
+        [Authorize]
         public ActionResult CheckOut(Order order, Order orderItem)
         {
-
-            var basketItemspay = basketService.GetBasketItems(this.HttpContext);
+            var basketItems = basketService.GetBasketItems(this.HttpContext);
             order.OrderStatus = "Order Created";
             order.Email = User.Identity.Name;
 
             //Process Payment
-
             //var FindOrder = db.Bookings.Where(x => x.Id == invoice.Id).Include(x => x.RoomSize).Include(x => x.ApplicationUser).Include(x => x.Catering).FirstOrDefault() ?? null;
             var FindOrder = dc.OrderItems.Where(x => x.Id == orderItem.Id).FirstOrDefault() ?? null;
 
@@ -193,27 +192,14 @@ namespace ShelbyChester.WebUI.Controllers
                 }
                 // Redirect to PayFast line below will send you to payfast with all your values and you can make payment
                 Response.Redirect(site + dc.OrderItems.Where(x => x.Id == orderItem.Id).ToString());
-
-
+                //
                 order.OrderStatus = "Payment Processed";
-                orderService.CreateOrder(order, basketItemspay);
+                orderService.CreateOrder(order, basketItems);
                 basketService.ClearBasket(this.HttpContext);
 
-                return View();
+                return RedirectToAction("ThankYou", new { OrderId = order.Id });
             }
-            else
-            {
-                return View();
-            }
-
-            //
-
-
-            //order.OrderStatus = "Payment Processed";
-            //orderService.CreateOrder(order, basketItems);
-            //basketService.ClearBasket(this.HttpContext);
-
-            //return RedirectToAction("ThankYou", new { OrderId = order.Id });
+            return View();
         }
 
         public ActionResult ThankYou(string OrderId)
@@ -224,6 +210,7 @@ namespace ShelbyChester.WebUI.Controllers
 
 
         //payment
+       
         
     }
 }
