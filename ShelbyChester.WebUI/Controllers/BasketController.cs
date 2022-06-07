@@ -82,8 +82,6 @@ namespace ShelbyChester.WebUI.Controllers
 
             //Process Payment
 
-
-
             order.OrderStatus = "Payment Processed";
             orderService.CreateOrder(order, basketItems);
             basketService.ClearBasket(this.HttpContext);
