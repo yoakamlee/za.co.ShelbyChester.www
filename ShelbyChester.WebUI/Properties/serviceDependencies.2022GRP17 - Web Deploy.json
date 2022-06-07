@@ -1,10 +1,10 @@
 {
   "dependencies": {
     "mssql2": {
-      "secretStore": "LocalSecretsFile",
+      "secretStore": "AzureAppSettings",
       "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/shelbychester/databases/ShelbyChester2",
       "type": "mssql.azure",
-      "connectionId": "ShelbyChester2"
+      "connectionId": "ShelbyChester"
     }
   }
 }

@@ -15,6 +15,7 @@ namespace ShelbyChester.WebUI.Controllers
         IOrderService orderService;
         IRepo<Customer> customers;
         ApplicationDbContext db = new ApplicationDbContext();
+        public const string ConnectionString = "Data Source=tcp:shelbychesterwebuidbserver.database.windows.net,1433;Initial Catalog=ShelbyChester.WebUI_db;User Id=Chester@shelbychesterwebuidbserver;Password=DUT2022@";
 
         public OrderManagerController(IOrderService OrderService, IRepo<Customer> Customers, ApplicationDbContext Db)
         {
@@ -38,7 +39,7 @@ namespace ShelbyChester.WebUI.Controllers
         public ActionResult Employee()
         {
             string empID = "";
-            using (SqlConnection connection = new SqlConnection(@"Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=ShelbyChester;Integrated Security=True"))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
                 string query = @"SELECT TOP 1 Id
@@ -76,7 +77,7 @@ namespace ShelbyChester.WebUI.Controllers
             };
             
             List<string> employees = new List<string>();
-            using (SqlConnection connection = new SqlConnection(@"Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=ShelbyChester;Integrated Security=True"))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
                 string query = @"SELECT UR.UserId
@@ -134,7 +135,7 @@ namespace ShelbyChester.WebUI.Controllers
         public ActionResult Driver()
         {
             string driveID = "";
-            using (SqlConnection connection = new SqlConnection(@"Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=ShelbyChester;Integrated Security=True"))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
                 string query = @"SELECT TOP 1 Id
@@ -186,7 +187,7 @@ namespace ShelbyChester.WebUI.Controllers
             };
 
             List<string> drivers = new List<string>();
-            using (SqlConnection connection = new SqlConnection(@"Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=ShelbyChester;Integrated Security=True"))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
                 string query = @"SELECT UR.UserId
@@ -239,7 +240,7 @@ namespace ShelbyChester.WebUI.Controllers
             };
             //EmloyeeList
             List<string> employees = new List<string>();
-            using (SqlConnection connection = new SqlConnection(@"Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=ShelbyChester;Integrated Security=True"))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
                 string query = @"SELECT UR.UserId
@@ -273,7 +274,7 @@ namespace ShelbyChester.WebUI.Controllers
 
             //DriverList
             List<string> drivers = new List<string>();
-            using (SqlConnection connection = new SqlConnection(@"Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=ShelbyChester;Integrated Security=True"))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
                 string query = @"SELECT UR.UserId

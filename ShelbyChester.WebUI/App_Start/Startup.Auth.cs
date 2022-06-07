@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
@@ -63,6 +64,55 @@ namespace ShelbyChester.WebUI
             //    ClientId = "",
             //    ClientSecret = ""
             //});
+
+            CreateRole();
+        }
+
+        public void CreateRole()
+        {
+            ApplicationDbContext context = new ApplicationDbContext();
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+
+            
+
+            //creating role
+            if (!roleManager.RoleExists("Admin"))
+            {
+
+
+                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                role.Name = "Admin";
+                roleManager.Create(role);
+            }
+            var user = new ApplicationUser();
+            user.UserName = "yoakam@gmail.com";
+            user.Email = "yoakam@gmail.com";
+            string password = "Password@12";
+
+
+
+            var User = userManager.Create(user, password);
+            if (User.Succeeded)
+                userManager.AddToRole(user.Id, "Admin");
+
+            if (!roleManager.RoleExists("Employee"))
+            {
+
+
+                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                role.Name = "Employee";
+                roleManager.Create(role);
+            }
+
+            if (!roleManager.RoleExists("Driver"))
+            {
+
+
+                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                role.Name = "Driver";
+                roleManager.Create(role);
+            }
         }
     }
 }
