@@ -260,6 +260,13 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\ContainerType\dry-storage-container.jpg" />
+    <Content Include="Content\ContainerType\flat-rack-container.jpg" />
+    <Content Include="Content\ContainerType\half-height-container.jpg" />
+    <Content Include="Content\ContainerType\iso-tanks.jpg" />
+    <Content Include="Content\ContainerType\open-side-storage-container.jpg" />
+    <Content Include="Content\ContainerType\open-top-container.jpg" />
+    <Content Include="Content\ContainerType\refrigerated-iso-container.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -386,7 +393,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\ContainerType\" />
     <Folder Include="Content\EmployeeImage\" />
     <Folder Include="Views\Order\" />
   </ItemGroup>

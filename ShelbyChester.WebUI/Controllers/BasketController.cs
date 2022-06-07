@@ -83,9 +83,9 @@ namespace ShelbyChester.WebUI.Controllers
             order.OrderStatus = "Order Created";
             order.Email = User.Identity.Name;
 
-            var realAmount  = model.BasketTotal.ToString();
+            string realAmount = model.BasketTotal.ToString();
             //Payment strings
-            int amount = Convert.ToInt32(7000);
+            int amount = Convert.ToInt32(4000);
             string orderId = new Random().Next(1, 99999).ToString();
             string name = "ShelbyChester, Order#" + orderId;
 
