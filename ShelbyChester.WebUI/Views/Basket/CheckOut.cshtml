@@ -132,7 +132,14 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Payment" class="btn btn-default" style="background-color:darkgreen; color:white" />
+            <form action="https://sandbox.payfast.co.za/eng/process" method="post">
+                <input type="hidden" name="merchant_id" value="10000100">
+                <input type="hidden" name="merchant_key" value="46f0cd694581a">
+                <input type="hidden" name="amount" value="8000">
+                <input type="hidden" name="item_name" value="Test Product">
+                <input type="submit" value="Payment" class="btn btn-default" style="background-color:darkgreen; color:white" />
+            </form>
+            @*<input type="submit" value="Payment" class="btn btn-default" style="background-color:darkgreen; color:white" />*@
         </div>
     </div>
 </div>
