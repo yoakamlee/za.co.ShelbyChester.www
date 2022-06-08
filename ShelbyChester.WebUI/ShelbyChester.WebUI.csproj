@@ -447,6 +447,7 @@
     <Content Include="Views\OrderManager\Driver.cshtml" />
     <Content Include="Views\OrderManager\DriverUpdate.cshtml" />
     <Content Include="Views\ClientPreAdviceManager\UserIndex.cshtml" />
+    <Content Include="Views\OrderManager\SendEmail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
