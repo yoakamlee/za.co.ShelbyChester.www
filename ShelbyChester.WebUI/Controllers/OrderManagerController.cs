@@ -12,6 +12,8 @@ namespace ShelbyChester.WebUI.Controllers
 {
     public class OrderManagerController : Controller
     {
+
+        //providerName="System.Data.SqlClient" 
         IOrderService orderService;
         IRepo<Customer> customers;
         ApplicationDbContext db = new ApplicationDbContext();
@@ -117,7 +119,7 @@ namespace ShelbyChester.WebUI.Controllers
         //
 
         [HttpPost]
-        [Authorize(Roles = "Employee")]
+        //[Authorize(Roles = "Employee")]
         public ActionResult EmployeeUpdate(Order updateOrder, string Id)
         {
             Order order = orderService.GetOrder(Id);

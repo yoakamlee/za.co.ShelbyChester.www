@@ -40,8 +40,8 @@
         </div>
     </div>
 
-    @if (@Model.EmployeeId != null)
-    {
+    @*@if (@Model.EmployeeId != null)
+    {*@
         <div class="form-group">
             @Html.Label("Employee Assigned")
             <div class="col-md-10">
@@ -49,9 +49,10 @@
                 @*@Html.ValidationMessageFor(model => model.OrderStatus, "", new { @class = "text-danger" })*@
             </div>
         </div>
-    }
-    @if (Model.DriverId !=null)
-    {
+    @*}*@
+
+    @*@if (Model.DriverId !=null)
+    {*@
         <div class="form-group">
             @Html.Label("Driver Assigned")
             <div class="col-md-10">
@@ -59,7 +60,7 @@
                 @*@Html.ValidationMessageFor(model => model.OrderStatus, "", new { @class = "text-danger" })*@
             </div>
         </div>
-    }
+    @*}*@
    
 
     <div class="form-group">
