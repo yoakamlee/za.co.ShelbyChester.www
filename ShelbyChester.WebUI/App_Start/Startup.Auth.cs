@@ -86,15 +86,21 @@ namespace ShelbyChester.WebUI
                 roleManager.Create(role);
             }
             var user = new ApplicationUser();
-            user.UserName = "yoakam@gmail.com";
-            user.Email = "yoakam@gmail.com";
+            user.UserName = "admin@gmail.com";
+            user.Email = "admin@gmail.com";
             string password = "Password@12";
 
+            
 
 
             var User = userManager.Create(user, password);
+
+
             if (User.Succeeded)
+            {
                 userManager.AddToRole(user.Id, "Admin");
+            }
+                
 
             if (!roleManager.RoleExists("Employee"))
             {

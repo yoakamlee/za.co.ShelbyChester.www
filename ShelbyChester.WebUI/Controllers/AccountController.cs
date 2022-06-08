@@ -20,16 +20,18 @@ namespace ShelbyChester.WebUI.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
         private IRepo<Customer> customerRepo;
+        ApplicationDbContext context;
 
         //public AccountController()
         //{
         //}
 
-        public AccountController(IRepo<Customer> CustomerRepo )
+        public AccountController(IRepo<Customer> CustomerRepo)
         {
             
             this.customerRepo = CustomerRepo;
-            
+            context = new ApplicationDbContext();
+
         }
 
         public ApplicationSignInManager SignInManager
@@ -141,6 +143,9 @@ namespace ShelbyChester.WebUI.Controllers
 
         //
         // GET: /Account/Register
+
+
+
         [AllowAnonymous]
         public ActionResult Register()
         {
@@ -154,9 +159,13 @@ namespace ShelbyChester.WebUI.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+            ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin"))
+                                   .ToList(), "Name", "Name");
+
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -185,6 +194,9 @@ namespace ShelbyChester.WebUI.Controllers
 
                     return RedirectToAction("Index", "Home");
                 }
+
+                ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin"))
+                                  .ToList(), "Name", "Name");
                 AddErrors(result);
             }
 

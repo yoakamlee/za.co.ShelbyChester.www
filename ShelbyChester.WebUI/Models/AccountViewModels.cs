@@ -95,6 +95,10 @@ namespace ShelbyChester.WebUI.Models
     public class ResetPasswordViewModel
     {
         [Required]
+        [Display(Name = "UserRoles")]
+        public string UserRoles { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
