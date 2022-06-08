@@ -69,13 +69,13 @@
                                     <a class="nav-link" @Html.ActionLink("Admin", "Index", "Admin")
                                 </li>
                             }
-                            @if (Request.IsAuthenticated && User.IsInRole("Employee"))
-                            {
+                            @*@if (Request.IsAuthenticated && User.IsInRole("Employee"))
+                            {*@
                                 <li class="nav-item">
 
                                     <a class="nav-link" @Html.ActionLink("Employee", "Employee", "OrderManager")
                                 </li>
-                            }
+                            @*}*@
 
                             @if (Request.IsAuthenticated && User.IsInRole("Driver"))
                             {
