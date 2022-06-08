@@ -40,21 +40,27 @@
         </div>
     </div>
 
-    <div class="form-group">
-        @Html.Label("Employee Assigned")
-        <div class="col-md-10">
-            @Html.DropDownListFor(model => model.EmployeeId, new SelectList(ViewBag.EmpList, "Id", "Email"), new { @class = "form-control" })
-            @*@Html.ValidationMessageFor(model => model.OrderStatus, "", new { @class = "text-danger" })*@
+    @if (@Model.EmployeeId != null)
+    {
+        <div class="form-group">
+            @Html.Label("Employee Assigned")
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.EmployeeId, new SelectList(ViewBag.EmpList, "Id", "Email"), new { @class = "form-control" })
+                @*@Html.ValidationMessageFor(model => model.OrderStatus, "", new { @class = "text-danger" })*@
+            </div>
         </div>
-    </div>
-
-    <div class="form-group">
-        @Html.Label("Driver Assigned")
-        <div class="col-md-10">
-            @Html.DropDownListFor(model => model.DriverId, new SelectList(ViewBag.DriveList, "Id", "Email"), new { @class = "form-control" })
-            @*@Html.ValidationMessageFor(model => model.OrderStatus, "", new { @class = "text-danger" })*@
+    }
+    @if (Model.DriverId !=null)
+    {
+        <div class="form-group">
+            @Html.Label("Driver Assigned")
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.DriverId, new SelectList(ViewBag.DriveList, "Id", "Email"), new { @class = "form-control" })
+                @*@Html.ValidationMessageFor(model => model.OrderStatus, "", new { @class = "text-danger" })*@
+            </div>
         </div>
-    </div>
+    }
+   
 
     <div class="form-group">
         @Html.LabelFor(model => model.CreatedAt, htmlAttributes: new { @class = "control-label col-md-2" })

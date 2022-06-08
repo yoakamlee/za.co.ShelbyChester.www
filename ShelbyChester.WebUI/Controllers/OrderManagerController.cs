@@ -15,6 +15,7 @@ namespace ShelbyChester.WebUI.Controllers
         IOrderService orderService;
         IRepo<Customer> customers;
         ApplicationDbContext db = new ApplicationDbContext();
+        public const string ConnectionStringLocal = @"Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=ShelbyChester;Integrated Security=True";
         public const string ConnectionString = @"Data Source=tcp:shelbychesterwebuidbserver.database.windows.net,1433;Initial Catalog=ShelbyChester.WebUI_db;User Id=Chester@shelbychesterwebuidbserver;Password=DUT2022@";
 
         public OrderManagerController(IOrderService OrderService, IRepo<Customer> Customers, ApplicationDbContext Db)

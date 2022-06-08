@@ -109,6 +109,14 @@ namespace ShelbyChester.WebUI
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
                 role.Name = "Employee";
                 roleManager.Create(role);
+
+                // Create employee
+                var emp = new ApplicationUser();
+                emp.UserName = "employee@gmail.com";
+                emp.Email = "employee@gmail.com";
+                string emp_password = "Password@13";
+
+                userManager.AddToRole(emp.Id, "Employee");
             }
 
             if (!roleManager.RoleExists("Driver"))
