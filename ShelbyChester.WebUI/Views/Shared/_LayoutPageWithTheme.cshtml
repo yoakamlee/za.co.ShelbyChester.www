@@ -89,19 +89,23 @@
                                 </li>
                             }
 
-                            <li class="nav-item">
+                            @*<li class="nav-item">
                                 <a class="nav-link" href="/Home/Contact">Contact</a>
-                            </li>
+                            </li>*@
                             <li class="nav-item">
                                 <a class="nav-link free-con" @Html.ActionLink("Need some Advice?", "Create", "ClientPreAdviceManager")</a>
                             </li>
                         </ul>
                         <div style="padding-left:5px">
-                                  @Html.Partial("_LoginPartial")
+                            @Html.Partial("_LoginPartial")
                         </div>
-                           @{ 
-                               Html.RenderAction("BasketSummary", "Basket"); 
-                            }
+                        @if (Request.IsAuthenticated)
+                        {
+                            
+                                Html.RenderAction("BasketSummary", "Basket");
+                            
+                        }
+                       
                     </div>
                     <!-- toggle switch for light and dark theme -->
                     <div class="mobile-position">
