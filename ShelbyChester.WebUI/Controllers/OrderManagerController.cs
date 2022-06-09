@@ -342,6 +342,7 @@ namespace ShelbyChester.WebUI.Controllers
             order.OrderStatus = updateOrder.OrderStatus;
             order.EmployeeId = updateOrder.EmployeeId;
             order.DriverId = updateOrder.DriverId;
+            order.DeliverTo = updateOrder.DeliverTo;
             orderService.UpdateOrder(order);
 
             return RedirectToAction("Index");
