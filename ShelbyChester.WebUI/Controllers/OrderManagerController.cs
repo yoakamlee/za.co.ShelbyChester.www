@@ -22,13 +22,21 @@ namespace ShelbyChester.WebUI.Controllers
         public const string ConnectionStringLocal = @"Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=ShelbyChester;Integrated Security=True";
         public const string ConnectionString = @"Data Source=tcp:shelbychesterwebuidbserver.database.windows.net,1433;Initial Catalog=ShelbyChester.WebUI_db;User Id=Chester@shelbychesterwebuidbserver;Password=DUT2022@";
 
+
+
         public OrderManagerController(IOrderService OrderService, IRepo<Customer> Customers, ApplicationDbContext Db)
         {
             this.orderService = OrderService;
             this.customers = Customers;
             this.db = Db;
         }
-        
+
+        // GET: OrderManager Client View List // Index
+        public ActionResult UserIndex()
+        {
+            List<Order> orders = orderService.GetOrderList();
+            return View(orders.Where(x => x.Email.Equals(Session["CurrentUserEmail"])));
+        }
 
         //Client View order history
         public ActionResult ClientOrderHistory()
