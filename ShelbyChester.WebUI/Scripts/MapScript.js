@@ -44,7 +44,7 @@ function setUpMap(center) {
     const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: center, // starting position [lng, lat][31.007231, -29.851234]
+        center: [31.007231, -29.851234], // starting position [lng, lat][31.007231, -29.851234]
         zoom: 15 // starting zoom
     });
 
@@ -55,7 +55,12 @@ function setUpMap(center) {
     })
 
 
-    map.addControl(directions, 'top-left');;
+    map.addControl(directions, 'top-left');
+
+    map.on('load', function () {
+        directions.setOrigin([31.007231, -29.851234]); // can be address in form setOrigin("12, Elm Street, NY")
+        /*directions.setDestinaion([11, 22]);*/ // can be address
+    })
 
     
 }
