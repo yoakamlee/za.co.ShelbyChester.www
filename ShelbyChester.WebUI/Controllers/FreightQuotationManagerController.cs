@@ -45,7 +45,7 @@ namespace ShelbyChester.WebUI.Controllers
                 context.Insert(freightQuotation);
                 context.Commit();
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
         }
 

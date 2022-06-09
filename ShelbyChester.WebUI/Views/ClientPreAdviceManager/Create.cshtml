@@ -7,6 +7,23 @@
 @*Add this after (div class="w3l-middle py-5" style="text-align: center) to change background image
     ; background: url(../../assets/images/ContainerType.jpeg) center; "*@
 
+<head>
+
+    <link href="~/Content/Create.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Item Order Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+
+</head>
 
 <div class="w3l-middle py-5">
     <div class="container py-xl-5 py-lg-3">
@@ -16,133 +33,160 @@
             <p class="pr-lg-5">
                 Need advice? send as your information and we will select the best suited container for you.
             </p>
-            <div class="buttons mt-5">
-                <a></a>
-                <a></a>
-            </div>
+            @*<div class="buttons mt-5">
+                    <a></a>
+                    <a></a>
+                </div>*@
         </div>
     </div>
 </div>
 
-
-
+<br />
+<br />
+<p style="align-content: center">
+    <div class="txt-center">
+        <h3 class="hny-title">Please Fill Out the Information Below</h3>
+        <h6 class="sub-titlehny">Help Us Help You</h6>
+    </div>
+</p>
+<br />
+<br />
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal" style="padding-top: 25px; padding-left: 30px; padding-right: 30px; padding-bottom: 50px">
-        <h2>Fill out information</h2>
-        <h4>Help us help you!</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.ClientPreAdvice.Customer_Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+    <div class="porduct-order-agile">
+        <form action="#" method="post">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <p>Name</p>
                 @Html.EditorFor(model => model.ClientPreAdvice.Customer_Name, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ClientPreAdvice.Customer_Name, "", new { @class = "text-danger" })
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ClientPreAdvice.Customer_Surname, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+
+
+
+            <div class="form-group">
+                <p>Surname</p>
+
                 @Html.EditorFor(model => model.ClientPreAdvice.Customer_Surname, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ClientPreAdvice.Customer_Surname, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ClientPreAdvice.Customer_Address, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            </div>
+
+            <div class="form-group">
+                <p>Address</p>
+
                 @Html.EditorFor(model => model.ClientPreAdvice.Customer_Address, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ClientPreAdvice.Customer_Address, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ClientPreAdvice.Customer_Email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            </div>
+
+            <div class="form-group">
+                <p>Email</p>
+
                 @Html.EditorFor(model => model.ClientPreAdvice.Customer_Email, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ClientPreAdvice.Customer_Email, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ClientPreAdvice.Customer_CellNum, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            </div>
+
+            <div class="form-group">
+                <p>Cell Phone Number (Optional)</p>
+
                 @Html.EditorFor(model => model.ClientPreAdvice.Customer_CellNum, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ClientPreAdvice.Customer_CellNum, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ClientPreAdvice.NumberOfItems, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            </div>
+
+            <div class="form-group">
+                <p>Number of Items</p>
+
                 @Html.EditorFor(model => model.ClientPreAdvice.NumberOfItems, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ClientPreAdvice.NumberOfItems, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ClientPreAdvice.WeightOfItems, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            </div>
+
+            <div class="form-group">
+                <p>Weight of an Individual Item (Kg)</p>
+
                 @Html.EditorFor(model => model.ClientPreAdvice.WeightOfItems, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ClientPreAdvice.WeightOfItems, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ClientPreAdvice.SizePerItem, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            </div>
+
+            <div class="form-group">
+                <p>Size per m<sup>2</sup></p>
+
                 @Html.EditorFor(model => model.ClientPreAdvice.SizePerItem, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ClientPreAdvice.SizePerItem, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ClientPreAdvice.Client_Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            </div>
+
+            <div class="form-group">
+                <p>Description of Items</p>
+
                 @Html.EditorFor(model => model.ClientPreAdvice.Client_Description, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ClientPreAdvice.Client_Description, "", new { @class = "text-danger" })
+
             </div>
-        </div>
-        @*<div class="col-md-10">
-            @Html.LabelFor(model => model.ClientPreAdvice.Country, htmlAttributes: new { @class = "control-label col-md-2" })
-            @Html.EnumDropDownListFor(model => model.ClientPreAdvice.Country)
-        </div>*@
-        <div class="col-md-10">
-            @Html.LabelFor(model => model.ClientPreAdvice.ContainerType, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+
+            <div class="form-left-to-w3l">
+                <p>Container Type</p>
+                <br />
                 @Html.DropDownListFor(model => model.ClientPreAdvice.ContainerType, new SelectList(Model.ContainerCategories, "ContainerName", "ContainerName"),
-               new { htmlAttributes = new { @class = "form-control" } })
+    new { htmlAttributes = new { @class = "form-control" } })
             </div>
-        </div>
-        <div class="col-md-10">
-            @Html.LabelFor(model => model.ClientPreAdvice.Province, htmlAttributes: new { @class = "control-label col-md-2" })
-            @Html.EnumDropDownListFor(model => model.ClientPreAdvice.Province)
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            <br />
+            <div class="form-left-to-w3l">
+                <p>Select Province</p>
+                <br />
+                @Html.EnumDropDownListFor(model => model.ClientPreAdvice.Province)
             </div>
-        </div>
+            <br />
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        </form>
+
+        @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+        {
+            <div class="text-right">
+
+
+                <input type='button' value='View Past Submissions' id='myButton' onClick='redirectOnClick()' />
+                <script>
+                function redirectOnClick() {
+                    document.location = 'UserIndex';
+                }
+                </script>
+            </div>
+        }
+
+        @if (Request.IsAuthenticated && User.IsInRole(""))
+        {
+            <div class="text-right">
+                <input type="button" value='View Past Submissions' id='myButton' onClick='redirectOnClick()' />
+                <script>
+        function redirectOnClick() {
+            document.location = 'UserIndex';
+        }
+                </script>
+            </div>
+        }
+
     </div>
+
+    <br />
+    <br />
+
 }
 
-@if (Request.IsAuthenticated && User.IsInRole("Admin"))
-{
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
-}
 
-@if (Request.IsAuthenticated && User.IsInRole("")) 
-{ 
-    <div>
-        @Html.ActionLink("Back to List", "UserIndex")
-    </div>
-}
+<br />
+<br />
+
+
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
