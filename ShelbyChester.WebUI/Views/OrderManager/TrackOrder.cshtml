@@ -92,8 +92,7 @@
                         container: 'map', // container ID
                         style: 'mapbox://styles/mapbox/streets-v11', // style URL
                         center: [31.007231, -29.851234], // starting position [lng, lat][31.007231, -29.851234]
-                        zoom: 10, // starting zoom
-                        interactive: false
+                        zoom: 100, // starting zoom
                     });
 
                     const nav = new mapboxgl.NavigationControl()
@@ -104,8 +103,8 @@
 
                     @*var _deliverTo = @Json.Encode(Model.DeliverTo);*@
 
-                    map.addControl(directions, 'top-left'),
-                        interactive: false;
+                    map.addControl(directions, 'top-left')
+                        
                     /*
                     map.on('load', function () {
                         directions.setOrigin("23 Sunview Road, Chatsworth, KwaZulu-Natal 4030, South Africa"),
