@@ -4,6 +4,9 @@
     ViewBag.Title = "DriverUpdate";
     Layout = "~/Views/Shared/_LayoutPageWithTheme.cshtml";
 }
+
+<!DOCTYPE html>
+
 <div class="w3l-middle py-5" style="text-align:left">
     <div class="container py-xl-5 py-lg-3">
         <div class="welcome-left py-md-5 py-3">
@@ -19,123 +22,153 @@
         </div>
     </div>
 </div>
-
+<style>
+    #map {
+        height: 500px;
+        width: 600px;
+    }
+</style>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-<div class="form-horizontal" style="padding-top: 25px; padding-left: 30px; padding-right: 30px; padding-bottom:50px">
-    <h4>Order</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @Html.HiddenFor(model => model.Id)
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.CreatedAt, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.CreatedAt, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.CreatedAt, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.OrderStatus, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownListFor(model => model.OrderStatus, new SelectList(ViewBag.StatusList), new { @class = "form-control" })
-            @*@Html.ValidationMessageFor(model => model.OrderStatus, "", new { @class = "text-danger" })*@
-        </div>
-    </div>
+    <html>
+    <head>
+        @*<script src="~/Scripts/MapScript.js" defer></script>*@
+        <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
-            @*@Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })*@
-        </div>
-    </div>
+        <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
-            @*@Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })*@
-        </div>
-    </div>
+        <script id="search-js" defer src="https://api.mapbox.com/search-js/v1.0.0-beta.10/web.js"></script>
+        <script>
+            const accessToken = 'pk.eyJ1IjoieW9ha2FtbGVlIiwiYSI6ImNsNDZ3czNsZzAydTYzY29ieGNpN3ZvcDUifQ.iK_3dLz5L1rdk5RyEgylFg';
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-            @*@Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })*@
-        </div>
-    </div>
-</div>
+            const script = document.getElementById('search-js');
+            script.onload = function () {
+                mapboxsearch.autofill({
+                    accessToken
+                });
+            };
+        </script>
 
-<div class="col-md-6" style="padding-top: 25px; padding-left: 30px; padding-right: 30px; padding-bottom:50px">
-    <div class="form-group">
-        @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
-            @*@Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })*@
-        </div>
-    </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
-            @*@Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })*@
-        </div>
-    </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.postalCode, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.postalCode, new { htmlAttributes = new { @class = "form-control" } })
-            @*@Html.ValidationMessageFor(model => model.postalCode, "", new { @class = "text-danger" })*@
-        </div>
-    </div>
+    </head>
+    <body>
+        <div class="form-horizontal" style="padding-top: 25px; padding-left: 30px; padding-right: 30px; padding-bottom:50px">
+            <h4>Order</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Id)
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.DeliverTo, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.DeliverTo, new { htmlAttributes = new { @class = "form-control" } })
-            @*@Html.ValidationMessageFor(model => model.postalCode, "", new { @class = "text-danger" })*@
-        </div>
-    </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.CreatedAt, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.CreatedAt, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CreatedAt, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.OrderStatus, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.OrderStatus, new SelectList(ViewBag.StatusList), new { @class = "form-control" })
+                    @*@Html.ValidationMessageFor(model => model.OrderStatus, "", new { @class = "text-danger" })*@
+                </div>
+            </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.ItemName, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.ItemName, new { htmlAttributes = new { @class = "form-control" } })
-            @*@Html.ValidationMessageFor(model => model.postalCode, "", new { @class = "text-danger" })*@
-        </div>
-    </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                    @*@Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })*@
+                </div>
+            </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.ItemDescription, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.ItemDescription, new { htmlAttributes = new { @class = "form-control" } })
-            @*@Html.ValidationMessageFor(model => model.postalCode, "", new { @class = "text-danger" })*@
-        </div>
-    </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                    @*@Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })*@
+                </div>
+            </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.NumberOfItem, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.NumberOfItem, new { htmlAttributes = new { @class = "form-control" } })
-            @*@Html.ValidationMessageFor(model => model.postalCode, "", new { @class = "text-danger" })*@
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @*@Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })*@
+                </div>
+            </div>
         </div>
-    </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.WeightOfItem, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.WeightOfItem, new { htmlAttributes = new { @class = "form-control" } })
-            @*@Html.ValidationMessageFor(model => model.postalCode, "", new { @class = "text-danger" })*@
-        </div>
-    </div>
+        <div class="col-md-6" style="padding-top: 25px; padding-left: 30px; padding-right: 30px; padding-bottom:50px">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                    @*@Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })*@
+                </div>
+            </div>
 
-    @*<div class="form-group">
+            <div class="form-group">
+                @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+                    @*@Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })*@
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.postalCode, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.postalCode, new { htmlAttributes = new { @class = "form-control" } })
+                    @*@Html.ValidationMessageFor(model => model.postalCode, "", new { @class = "text-danger" })*@
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.DeliverTo, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.DeliverTo, new { htmlAttributes = new { @class = "form-control" } })
+                    @*@Html.ValidationMessageFor(model => model.postalCode, "", new { @class = "text-danger" })*@
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ItemName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.ItemName, new { htmlAttributes = new { @class = "form-control" } })
+                    @*@Html.ValidationMessageFor(model => model.postalCode, "", new { @class = "text-danger" })*@
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ItemDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.ItemDescription, new { htmlAttributes = new { @class = "form-control" } })
+                    @*@Html.ValidationMessageFor(model => model.postalCode, "", new { @class = "text-danger" })*@
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.NumberOfItem, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.NumberOfItem, new { htmlAttributes = new { @class = "form-control" } })
+                    @*@Html.ValidationMessageFor(model => model.postalCode, "", new { @class = "text-danger" })*@
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.WeightOfItem, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.WeightOfItem, new { htmlAttributes = new { @class = "form-control" } })
+                    @*@Html.ValidationMessageFor(model => model.postalCode, "", new { @class = "text-danger" })*@
+                </div>
+            </div>
+
+            @*<div class="form-group">
             @Html.LabelFor(model => model.EmployeeId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.EmployeeId, new { htmlAttributes = new { @class = "form-control" } })
@@ -143,15 +176,83 @@
             </div>
         </div>*@
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default" />
+            <div class="form-group">
+                @Html.LabelFor(model => model.DeliverTo, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.DeliverTo, new { htmlAttributes = new { @class = "form-control" } })
+                    @*@Html.ValidationMessageFor(model => model.postalCode, "", new { @class = "text-danger" })*@
+                </div>
+            </div>
+
+            <div id='map'></div>
+
+
+            <script type="text/javascript">
+
+                mapboxgl.accessToken = 'pk.eyJ1IjoieW9ha2FtbGVlIiwiYSI6ImNsNDZ3czNsZzAydTYzY29ieGNpN3ZvcDUifQ.iK_3dLz5L1rdk5RyEgylFg';
+
+
+                navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
+                    enableHighAccuracy: true
+
+                });
+
+                function successLocation(position) {
+                    console.log(position);
+                    setUpMap([31.007231, -29.851234]);
+                }
+
+                function errorLocation() {
+                    setUpMap([31.007231, -29.851234]);
+                }
+
+                function setUpMap(center) {
+                    const map = new mapboxgl.Map({
+                        container: 'map', // container ID
+                        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+                        center: [31.007231, -29.851234], // starting position [lng, lat][31.007231, -29.851234]
+                        zoom: 15 // starting zoom
+                    });
+
+                    const nav = new mapboxgl.NavigationControl()
+                    map.addControl(nav)
+                    var directions = new MapboxDirections({
+                        accessToken: mapboxgl.accessToken
+                    })
+
+                    @*var _deliverTo = @Json.Encode(Model.DeliverTo);*@
+
+                    map.addControl(directions, 'top-left');
+                    /*
+                    map.on('load', function () {
+                        directions.setOrigin("23 Sunview Road, Chatsworth, KwaZulu-Natal 4030, South Africa"),
+                        // can be address in form setOrigin("12, Elm Street, NY")
+                        directions.setDestinaion([31.007231, -29.851235]); // can be address
+                    })*/
+
+
+
+                    map.on('load', function () {
+                        directions.setOrigin([31.007231, -29.851234]); // On load, set the origin to "Toronto, Ontario".
+                        directions.setDestination('@Model.DeliverTo'); // On load, set the destination to "Montreal, Quebec".
+                    });
+
+
+                }
+
+            </script>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
         </div>
+
+    </body>
+</html>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
     </div>
-</div>
-
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

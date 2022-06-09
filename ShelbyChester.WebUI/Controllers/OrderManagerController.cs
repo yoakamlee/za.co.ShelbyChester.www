@@ -38,6 +38,12 @@ namespace ShelbyChester.WebUI.Controllers
             return View(orders.Where(x => x.Email.Equals(Session["CurrentUserEmail"])));
         }
 
+        public ActionResult TrackOrder(string Id)
+        {
+            Order orders = orderService.GetOrder(Id);
+            return View(orders);
+        }
+
         //Client View order history
         public ActionResult ClientOrderHistory()
         {

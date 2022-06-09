@@ -5,12 +5,18 @@
     Layout = "~/Views/Shared/_LayoutPageWithTheme.cshtml";
 }
 
-<h2>UserIndex</h2>
+<div class="w3l-middle py-5" style="text-align:left">
+    <div class="container py-xl-5 py-lg-3">
+        <div class="welcome-left py-md-5 py-3">
+            <h6></h6>
+            <h4>Your Orders</h4>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+        </div>
+    </div>
+</div>
+
+
+<table class="table" style="padding-top: 25px; padding-left: 30px; padding-right: 30px; padding-bottom:50px">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.CreatedAt)
@@ -18,9 +24,7 @@
         <th>
             @Html.DisplayNameFor(model => model.FirstName)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastName)
-        </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.Email)
         </th>
@@ -52,59 +56,66 @@
             @Html.DisplayNameFor(model => model.OrderStatus)
         </th>
         @*<th>
-            @Html.DisplayNameFor(model => model.EmployeeId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DriverId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserId)
-        </th>*@
+                @Html.DisplayNameFor(model => model.EmployeeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DriverId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>*@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.CreatedAt)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FirstName)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Address)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.City)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.postalCode)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DeliverTo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ItemName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ItemDescription)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NumberOfItem)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.WeightOfItem)
+    </td>
+
+
+    <td>
+        @Html.DisplayFor(modelItem => item.OrderStatus)
+    </td>
+    @if (item.OrderStatus == "Order On Route")
+    {
         <td>
-            @Html.DisplayFor(modelItem => item.CreatedAt)
+            @Html.ActionLink("Track Order", "TrackOrder", new { id = item.Id })
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.City)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.postalCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DeliverTo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ItemName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ItemDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumberOfItem)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WeightOfItem)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderStatus)
-        </td>
-        @*<td>
+    }
+    @*<td>
             @Html.DisplayFor(modelItem => item.EmployeeId)
         </td>
         <td>
@@ -113,12 +124,8 @@
         <td>
             @Html.DisplayFor(modelItem => item.UserId)
         </td>*@
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+
+</tr>
+    }
 
 </table>

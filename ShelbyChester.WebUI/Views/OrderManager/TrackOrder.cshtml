@@ -1,0 +1,137 @@
+﻿@model ShelbyChester.Core.Models.Order
+
+@{
+    ViewBag.Title = "TrackOrder";
+    Layout = "~/Views/Shared/_LayoutPageWithTheme.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+
+<div class="w3l-middle py-5" style="text-align:left">
+    <div class="container py-xl-5 py-lg-3">
+        <div class="welcome-left py-md-5 py-3">
+            <h6></h6>
+            <h4>Track Your Order</h4>
+            
+        </div>
+    </div>
+</div>
+<style>
+    #map {
+        height: 50vh;
+        width: 50vw;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <html>
+    <head>
+        @*<script src="~/Scripts/MapScript.js" defer></script>*@
+        <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
+
+        <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
+
+        <script id="search-js" defer src="https://api.mapbox.com/search-js/v1.0.0-beta.10/web.js"></script>
+        <script>
+            const accessToken = 'pk.eyJ1IjoieW9ha2FtbGVlIiwiYSI6ImNsNDZ3czNsZzAydTYzY29ieGNpN3ZvcDUifQ.iK_3dLz5L1rdk5RyEgylFg';
+
+            const script = document.getElementById('search-js');
+            script.onload = function () {
+                mapboxsearch.autofill({
+                    accessToken
+                });
+            };
+        </script>
+
+
+
+    </head>
+    <body>
+        <div class="form-horizontal" style="padding-top: 25px; padding-left: 30px; padding-right: 30px; padding-bottom:50px; margin:50px">
+           
+
+            <div class="form-group">
+                @Html.Label("Your Container is on the way to: ")
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.DeliverTo, new { htmlAttributes = new { @class = "form-control" } })
+                    @*@Html.ValidationMessageFor(model => model.postalCode, "", new { @class = "text-danger" })*@
+                </div>
+            </div>
+
+            <div id='map' style="padding:100px"></div>
+
+
+            <script type="text/javascript">
+
+                mapboxgl.accessToken = 'pk.eyJ1IjoieW9ha2FtbGVlIiwiYSI6ImNsNDZ3czNsZzAydTYzY29ieGNpN3ZvcDUifQ.iK_3dLz5L1rdk5RyEgylFg';
+
+
+                navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
+                    enableHighAccuracy: true
+
+                });
+
+                function successLocation(position) {
+                    console.log(position);
+                    setUpMap([31.007231, -29.851234]);
+                }
+
+                function errorLocation() {
+                    setUpMap([31.007231, -29.851234]);
+                }
+
+                function setUpMap(center) {
+                    const map = new mapboxgl.Map({
+                        container: 'map', // container ID
+                        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+                        center: [31.007231, -29.851234], // starting position [lng, lat][31.007231, -29.851234]
+                        zoom: 10, // starting zoom
+                        interactive: false
+                    });
+
+                    const nav = new mapboxgl.NavigationControl()
+                    map.addControl(nav)
+                    var directions = new MapboxDirections({
+                        accessToken: mapboxgl.accessToken
+                    })
+
+                    @*var _deliverTo = @Json.Encode(Model.DeliverTo);*@
+
+                    map.addControl(directions, 'top-left'),
+                        interactive: false;
+                    /*
+                    map.on('load', function () {
+                        directions.setOrigin("23 Sunview Road, Chatsworth, KwaZulu-Natal 4030, South Africa"),
+                        // can be address in form setOrigin("12, Elm Street, NY")
+                        directions.setDestinaion([31.007231, -29.851235]); // can be address
+                    })*/
+
+
+
+                    map.on('load', function () {
+                        directions.setOrigin([31.007231, -29.851234]); // On load, set the origin to "Toronto, Ontario".
+                        directions.setDestination('@Model.DeliverTo'); // On load, set the destination to "Montreal, Quebec".
+                    });
+
+
+                }
+
+            </script>
+            </div>
+
+    </body>
+</html>
+}
+
+
+<p>
+   
+    @Html.ActionLink("Back to List", "UserIndex","OrderManager")
+</p>

@@ -39,7 +39,6 @@ namespace ShelbyChester.Core.Models
         public string OrderStatus { get; set; }
         public string EmployeeId { get; set; }
         public string DriverId { get; set; }
-        public string UserId { get; set; }
         public virtual ICollection<OrderItem> OrderItems { get; set; }
     }
 }

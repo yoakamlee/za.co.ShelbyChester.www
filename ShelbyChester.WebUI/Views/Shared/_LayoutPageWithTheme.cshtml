@@ -62,6 +62,10 @@
                                 <a class="nav-link" @Html.ActionLink("Rent here", "ContainerRentList", "Home")</a>
                             </li>
 
+                            <li class="nav-item">
+                                <a class="nav-link" @Html.ActionLink("View Orders", "UserIndex", "OrderManager")</a>
+                            </li>
+
                             @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                             {
                                 <li class="nav-item">

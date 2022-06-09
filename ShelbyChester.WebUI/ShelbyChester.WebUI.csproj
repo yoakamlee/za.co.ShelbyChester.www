@@ -450,6 +450,7 @@
     <Content Include="Views\ClientPreAdviceManager\UserIndex.cshtml" />
     <Content Include="Views\OrderManager\SendEmail.cshtml" />
     <Content Include="Views\OrderManager\UserIndex.cshtml" />
+    <Content Include="Views\OrderManager\TrackOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
