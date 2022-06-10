@@ -147,6 +147,7 @@ namespace ShelbyChester.WebUI.Controllers
             Order order = orderService.GetOrder(Id);
 
             order.OrderStatus = updateOrder.OrderStatus;
+            order.OrderStatus = updateOrder.OrderStatus;
             orderService.UpdateOrder(order);
 
             return RedirectToAction("Employee");
